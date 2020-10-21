@@ -134,8 +134,7 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
 |       |
 |       \---templates
 |               home.html
-|
-+---scss
+|+---scss
     |   |   global.scss
     |   |   styleguide.scss
     |   |
@@ -183,7 +182,6 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
         |   \---modules
         \---templates
                 home.pug
-
 ```
 
 ## Notes
