@@ -65,7 +65,7 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
 - Writing Pug with JSON, to separate logic from content
 - Favicons Included
 - Styleguide with links for templates/modules
-- Cookiebar compliant with EU rules, fully customisable
+- Cookiebar compliant with EU rules, fully customizable
 
 ## Tasks
 
