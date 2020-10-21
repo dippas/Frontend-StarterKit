@@ -139,7 +139,6 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
 |
 \---src
     |   index.pug
-    |   output.doc
     |
     +---data
     |   |   styleguide.json
