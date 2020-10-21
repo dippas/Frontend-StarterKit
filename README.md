@@ -2,6 +2,10 @@
 
 This starterkit allows you to have a quicly start in building your website.
 
+##Give some love
+
+[![bc](https://cdn.buymeacoffee.com/buttons/lato-black.png)](https://www.buymeacoffee.com/dippas)
+
 ## Table of Contents
 
 - [Status](#status)
@@ -21,7 +25,7 @@ This starterkit allows you to have a quicly start in building your website.
 [![watchers](https://img.shields.io/github/watchers/dippas/Frontend-StarterKit?label=Watchers&style=social)](https://github.com/dippas/Frontend-StarterKit/watchers)
 
 [![release (latest by date)](https://img.shields.io/github/v/release/dippas/Frontend-StarterKit)](https://github.com/dippas/Frontend-StarterKit/releases/latest)
-![language top](https://img.shields.io/github/languages/top/dippas/Frontend-StarterKit)
+![David](https://img.shields.io/david/dippas/frontend-starterkit)
 [![issues](https://img.shields.io/github/issues/dippas/Frontend-StarterKit)](https://github.com/dippas/Frontend-StarterKit/issues)
 ![maintenance](https://img.shields.io/maintenance/yes/2020)
 ![release date](https://img.shields.io/github/release-date/dippas/Frontend-StarterKit)
@@ -57,7 +61,7 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
 - Linting SCSS using [SassLint](https://www.npmjs.com/package/gulp-sass-lint)
 - Compiling HTML files from Pug
 - Writing Pug with JSON, to separate logic from content
-- Favicons Includes
+- Favicons Included
 - Styleguide with links for templates/modules
 - Cookiebar compliant with EU rules, fully customisable
 
