@@ -134,7 +134,38 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
 |       |
 |       \---templates
 |               home.html
-|+---scss
+|
+\---src
+    |   index.pug
+    |   output.doc
+    |
+    +---data
+    |   |   styleguide.json
+    |   |
+    |   \---temp
+    |           data.json
+    |
+    +---img
+    |   \---favicon
+    |           android-chrome-192x192.png
+    |           android-chrome-512x512.png
+    |           apple-touch-icon.png
+    |           favicon-16x16.png
+    |           favicon-32x32.png
+    |           favicon.ico
+    |
+    +---js
+    |   \---app
+    |       +---core
+    |       |       @cookies.js
+    |       |       @objectFit.js
+    |       |       @outlineAccessibility.js
+    |       |       @preloader.js
+    |       |       @scrollToElement.js
+    |       |       @urlExternalSafe.js
+    |       |
+    |       \---general
+    +---scss
     |   |   global.scss
     |   |   styleguide.scss
     |   |
@@ -170,7 +201,7 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
         |   |       scripts.pug
         |   |
         |   \---header
-        |           head.pug
+|           head.pug
         |           header.pug
         |
         +---styleguide
@@ -182,6 +213,7 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
         |   \---modules
         \---templates
                 home.pug
+
 ```
 
 ## Notes
