@@ -1,0 +1,218 @@
+@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+
+	//not being used in this project
+	@each $property in $properties {
+		#{$property}: $min-value;
+	}
+
+	@media (min-width: $min-vw) {
+		@each $property in $properties {
+			#{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+		}
+	}
+
+	@media (min-width: $max-vw) {
+		@each $property in $properties {
+			#{$property}: $max-value;
+		}
+	}
+}
+
+@mixin border-radius($key) {
+	border-radius: $key;
+	background-clip: padding-box;
+	/* stops bg color from leaking outside the border: */
+}
+
+@mixin position($position, $args) {
+	@each $o in top right bottom left {
+		$i: index($args, $o);
+
+		@if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number {
+			#{$o}: nth($args, $i + 1);
+		}
+	}
+
+	position: $position;
+}
+
+// Positioning helpers
+@mixin absolute($args: '') {
+	@include position(absolute, $args);
+}
+
+@mixin fixed($args: '') {
+	@include position(fixed, $args);
+}
+
+@mixin relative($args: '') {
+	@include position(relative, $args);
+}
+
+@mixin static($args: '') {
+	@include position(static, $args);
+}
+
+@mixin sticky($args: '') {
+	@include position(sticky, $args);
+}
+
+@mixin bp($breakpoint, $type: min) {
+	$value: map-get($breakpoints, $breakpoint);
+
+	@if $value != null {
+		$current-breakpoint: $breakpoint !global;
+
+		@if $type == max {
+			$value: $value - .063em
+		}
+
+		@media (#{$type}-width: $value) {
+			@content;
+		}
+
+		$current-breakpoint: $default-breakpoint !global;
+	}
+
+	@else {
+		@warn 'Invalid breakpoint `#{$breakpoint}`.';
+	}
+}
+
+@mixin placeholder($name) {
+
+	// If placeholder doesn't exist yet in `$placeholders` list
+	@if not index($placeholders, $name) {
+		// Store its name
+		$placeholders: append($placeholders, $name) !global;
+
+		//Dumping a placeholder out of any media query as well
+		// so basically at root level
+		%#{$name}-#{$default-breakpoint} {
+			@content;
+		}
+
+		// At root level
+		@at-root {
+
+			// Looping through `$breakpoints`
+			@each $breakpoint,
+			$value in $breakpoints {
+
+				// Opening a media query block
+				@media (min-width: $value) {
+
+					// Generating a placeholder
+					// Called $name-$breakpoint 
+					%#{$name}-#{$breakpoint} {
+						@content;
+					}
+				}
+			}
+		}
+	}
+
+	// If placeholder already exists, just warn the user
+	@else {
+		@warn 'Placeholder `#{$name}` already exists.';
+	}
+}
+
+@mixin _($name) {
+	@extend %#{$name}-#{$current-breakpoint} !optional;
+}
+
+@mixin orientation($orientation, $args...) {
+	@media (orientation: $orientation) {
+		@include bp($args...) {
+			@content;
+		}
+	}
+}
+
+@mixin size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+@mixin z-index($key) {
+	z-index: z-index($key);
+}
+
+@mixin keyframes($key) {
+	@keyframes #{$key} {
+		@content;
+	}
+}
+
+// transformations :: rotate, scale, translate
+@mixin transform($key...) {
+	transform: translate3d(0, 0, 0) $key;
+}
+
+// rotate
+@mixin rotate($key) {
+	@include transform(rotate(#{$key}deg));
+}
+
+// scale
+@mixin scale($key...) {
+	@include transform(scale($key));
+}
+
+@mixin scale3d($key...) {
+	@include transform(scale3d($key));
+}
+
+// translate
+@mixin translate($x, $y) {
+	@include transform(translate($x, $y));
+}
+
+// skew
+@mixin skew($x, $y) {
+	@include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+@mixin font-tracking($value) {
+	letter-spacing: ($value / 1000) + rem;
+}
+
+//https://stephanwagner.me/only-css-loading-spinner
+@mixin spinner($numberColors, $fillColor, $fillColor2: null, $fillColor3: null, $bgColor: transparent, $size: 2rem, $borderWidth: .1rem, $speed: .6s) {
+
+	.btn--loading {
+		position: relative;
+		&-spinner {
+			content: '';
+			@extend %position-center;
+			@include size($size);
+			margin-top: $size / -2;
+			margin-left: $size / -2;
+			border-radius: 50%;
+			border: $borderWidth solid $bgColor;
+			@if $numberColors == 1 {
+				border-top-color: $fillColor;
+			}
+			@else if $numberColors == 2 {
+				border-top-color: $fillColor;
+				border-bottom-color: $fillColor2;
+			}
+			@else if $numberColors == 3 {
+				border-top-color: $fillColor;
+				border-bottom-color: $fillColor2;
+				border-right-color: $fillColor3;
+			}
+			animation: spinner $speed linear infinite;
+		}
+	}
+
+	@include keyframes(spinner) {
+		from {
+			@include rotate(0);
+		}
+		to {
+			@include rotate(360);
+		}
+	}
+}

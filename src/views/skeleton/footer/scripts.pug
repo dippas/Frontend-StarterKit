@@ -1,0 +1,6 @@
+if !isStyleGuide
+	script(src='/assets/js/vendor/vendor.js')
+	script(src='/assets/js/app/app.js')
+else
+	script.
+		document.querySelectorAll('.js-accordion').forEach(el => el.addEventListener('click', () => el.nextElementSibling.classList.toggle('hidden')))

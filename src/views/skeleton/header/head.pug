@@ -1,0 +1,32 @@
+title= `${pageTitle} ${title ? `:: ${title}` : ''}`
+meta(charset='utf-8')
+meta(name='description' content='Project Static')
+meta(name='viewport' content='width=device-width, initial-scale=1')
+//-Chrome, Firefox OS and Opera
+meta(name='theme-color' content='#000000')
+//-Windows Phone
+meta(name='msapplication-navbutton-color' content='#000000')
+//-Android
+meta(name='mobile-web-app-capable' content='yes')
+//-iOS Safari
+meta(name='apple-mobile-web-app-capable' content='yes')
+meta(name='apple-mobile-web-app-status-bar-style' content='black-translucent')
+//-Favicon
+link(rel='apple-touch-icon-precomposed' sizes='57x57' href='/assets/img/favicon/apple-touch-icon-57x57.png')
+link(rel='apple-touch-icon-precomposed' sizes='114x114' href='/assets/img/favicon/apple-touch-icon-114x114.png')
+link(rel='apple-touch-icon-precomposed' sizes='72x72' href='/assets/img/favicon/apple-touch-icon-72x72.png')
+link(rel='apple-touch-icon-precomposed' sizes='144x144' href='/assets/img/favicon/apple-touch-icon-144x144.png')
+link(rel='apple-touch-icon-precomposed' sizes='120x120' href='/assets/img/favicon/apple-touch-icon-120x120.png')
+link(rel='apple-touch-icon-precomposed' sizes='152x152' href='/assets/img/favicon/apple-touch-icon-152x152.png')
+link(rel='icon' type='image/png' href='/assets/img/favicon/favicon-32x32.png' sizes='32x32')
+link(rel='icon' type='image/png' href='/assets/img/favicon/favicon-16x16.png' sizes='16x16')
+meta(name='application-name' content= `${pageTitle} ${title ? `:: ${title}` : ''}`)
+meta(name='msapplication-TileColor' content='#FFFFFF')
+meta(name='msapplication-TileImage' content='mstile-144x144.png')
+//- Styleguide Styles [Static only]
+if isStyleGuide
+	link(rel='stylesheet' href='/assets/css/styleguide.min.css')
+else	
+	//- Styles and External fonts
+	link(rel='stylesheet' href='/assets/css/vendor/vendor.min.css')
+	link(rel='stylesheet' href='/assets/css/styles.min.css')

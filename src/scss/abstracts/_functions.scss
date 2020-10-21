@@ -1,0 +1,20 @@
+@function z-index($key) {
+	@return map-get($z-index, $key);
+}
+
+@function strip-unit($value) {
+	@return $value / ($value * 0 + 1);
+}
+
+@function line-height($line-height, $font-size) {
+	@return $line-height / $font-size;
+}
+
+@function ease($key) {
+	@if map-has-key($ease, $key) {
+		@return map-get($ease, $key);
+	}
+
+	@warn 'Unknown '#{$key}' in $ease.';
+	@return null;
+}

@@ -1,0 +1,137 @@
+@include placeholder('flex-wrap') {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+@include placeholder('flex-center') {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+@include placeholder('flex-center-v') {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+@include placeholder('flex-center-h') {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+@include placeholder('flex-column') {
+	display: flex;
+	flex-direction: column;
+}
+
+@include placeholder('flex-column-wrap') {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+
+@include placeholder('flex-column-center') {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+@include placeholder('flex-column-center-v') {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	flex-direction: column;
+}
+
+@include placeholder('flex-column-center-h') {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	flex-direction: column;
+}
+
+@include placeholder('flex-between') {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+@include placeholder('flex-between-center') {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@include placeholder('flex-between-column') {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	flex-direction: column;
+}
+
+@include placeholder('flex-between-column-center') {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+}
+
+@include placeholder('flex-around') {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+@include placeholder('flex-around-center') {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+@include placeholder('flex-around-column') {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	flex-direction: column;
+}
+
+@include placeholder('flex-around-column-center') {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+}
+
+
+@include placeholder('position-center') {
+	@include position(absolute, top 50% left 50%);
+	@include translate(-50%, -50%);
+}
+
+@include placeholder('position-center-v') {
+	@include position(absolute, top 50%);
+	@include translate(0, -50%);
+}
+
+@include placeholder('position-center-h') {
+	@include position(absolute, left 50%);
+	@include translate(-50%, 0);
+}
+
+@include placeholder('block-center') {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@include placeholder('hide-element') {
+	@include absolute(left -9999.9rem);
+}

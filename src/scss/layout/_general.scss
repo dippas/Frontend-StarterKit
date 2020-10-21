@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box
+}
+
+a {
+	@extend %outline-a11y;
+}
+
+input,
+button,
+select,
+textarea {
+	@extend %outline-a11y;
+
+}
+
+[tabindex] {
+	@extend %outline-a11y;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+//remove default styles
+input,
+button,
+select,
+textarea {
+	border: 0;
+	outline: 0;
+	background: transparent;
+	margin: 0;
+	padding: 0;
+	font-family: inherit;
+	font-size: inherit;
+	appearance: none;
+}
+
+select {
+
+	//remove IE default arrow
+	&::-ms-expand {
+		display: none;
+	}
+
+	//applies rules to the value of a text or password <input> control or the content of a <select> control. 
+	&::-ms-value {
+		background: none;
+		color: var(--black);
+	}
+}
+
+//remove clear buttom from IE
+input {
+	&::-ms-clear {
+		width: 0;
+		height: 0;
+	}
+
+	//applies rules to the value of a text or password <input> control or the content of a <select> control. 
+	&::-ms-value {
+		background: none;
+		color: var(--black);
+	}
+
+	&[type=radio],
+	&[type=checkbox],
+	&[type=file] {
+		@extend %hide-element;
+	}
+
+	//remove X from IE
+	&[type=search] {
+
+		&::-ms-clear,
+		&::-ms-reveal {
+			display: none;
+			width: 0;
+			height: 0;
+		}
+
+		//remove X from Chrome
+		&::-webkit-search-decoration,
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-results-button,
+		&::-webkit-search-results-decoration {
+			display: none;
+		}
+	}
+}
+
+strong {
+	font-weight: var(--fw-bold);
+}
+
+em {
+	font-style: italic;
+}
+
+// style when selected mouse
+::selection {
+	background-color: var(--selection);
+	color: var(--white);
+}
+
+//layout
+body {
+	@extend %body-layout;
+}
+
+.wrapper {
+	@extend %wrapper-layout;
+	@extend %flex-wrap;
+}
+
+.footer {
+	@extend %footer-layout;
+}

@@ -1,0 +1,64 @@
+options:
+  formatter: table
+  merge-default-rules: false
+rules:
+  property-sort-order: 0
+  attribute-quotes: 0
+  no-ids: 1
+  no-misspelled-properties: 1
+  no-trailing-whitespace: 1
+  no-trailing-zero: 1
+  pseudo-element: 1
+  quotes: 1
+  shorthand-values: 1
+  space-after-colon: 1
+  space-after-comma: 1
+  space-around-operator: 1
+  space-between-parens: 1
+  space-before-colon: 1
+  space-before-brace: 1
+  url-quotes: 1
+  zero-unit: 1
+  leading-zero:
+  - 1
+  - include: false
+  no-qualifying-elements:
+  - 1
+  - allow-element-with-attribute: true
+  single-line-per-selector: 2
+  no-empty-rulesets: 2
+  no-important: 2
+  no-invalid-hex: 2
+  no-transition-all: 2
+  property-units:
+  - 2
+  - global: 
+    - rem
+    - vw
+    - vh
+    - vmin
+    - vmax
+    - '%'
+    - s
+    - ms
+  no-disallowed-properties:
+  - 2
+  - properties:
+    - 'float'
+    - 'clear'
+    - 'zoom'
+    - 'clip'
+  hex-notation:
+  - 2
+  - style: lowercase
+  hex-length:
+  - 2
+  - style: short
+  no-duplicate-properties:
+  - 2
+  indentation:
+  - 2
+  - size: tab
+  class-name-format:
+  - 2
+  - convention: hyphenatedbem
