@@ -2,7 +2,7 @@
 
 This starterkit allows you to have a quicly start in building your website.
 
-##Give some love
+## Give some love
 
 [![bc](https://cdn.buymeacoffee.com/buttons/lato-black.png)](https://www.buymeacoffee.com/dippas)
 
