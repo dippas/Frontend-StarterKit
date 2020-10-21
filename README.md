@@ -201,7 +201,7 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
         |   |       scripts.pug
         |   |
         |   \---header
-|           head.pug
+        |           head.pug
         |           header.pug
         |
         +---styleguide
