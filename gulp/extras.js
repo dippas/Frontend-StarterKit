@@ -4,27 +4,24 @@ const { src, dest, parallel, lastRun } = require('gulp'),
 	lec = require('gulp-line-ending-corrector')
 
 //--------- Fonts
-function fonts(done) {
-	src(paths.fonts.src, { since: lastRun(fonts) })
-		.pipe(dest(paths.fonts.dest))
-	done()
+function fonts() {
+	return src(paths.fonts.src, { since: lastRun(fonts) })
+		.pipe(dest(paths.fonts.dest))	
 }
 
 //--------- json
-function json(done) {
-	src(paths.json.src, { since: lastRun(json) })
+function json() {
+	return src(paths.json.src, { since: lastRun(json) })
 		.pipe(lec({
 			eolc: 'CRLF'
 		}))
-		.pipe(dest(paths.json.dest))
-	done()
+		.pipe(dest(paths.json.dest))	
 }
 
 //---------PDFs
-function pdfs(done) {
-	src(paths.pdfs.src, { since: lastRun(pdfs) })
-		.pipe(dest(paths.pdfs.dest))
-	done()
+function pdfs() {
+	return src(paths.pdfs.src, { since: lastRun(pdfs) })
+		.pipe(dest(paths.pdfs.dest))	
 }
 
 const extras = parallel(fonts, json, pdfs)

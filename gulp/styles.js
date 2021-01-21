@@ -15,7 +15,7 @@ const { src, dest } = require('gulp'),
 //--------- Compile Sass
 function coreStyles(basename, source, dist) {
 
-	src(source)
+	return src(source)
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
 		.pipe(sass({
@@ -63,13 +63,12 @@ function styles(done) {
 	done()
 }
 
-function sassLinter(done) {
-	src(paths.styles.app.watch)
+function sassLinter() {
+	return src(paths.styles.app.watch)
 		.pipe(plumber())
 		.pipe(sassLint())
 		.pipe(sassLint.format())
 		.pipe(sassLint.failOnError())
-	done()
 }
 
 exports.styles = styles

@@ -6,8 +6,8 @@ const { src, dest } = require('gulp'),
 	lec = require('gulp-line-ending-corrector')
 
 //---------  pug from json
-function data(done) {
-	src(paths.data.src)
+function data() {
+	return src(paths.data.src)
 		.pipe(merge({
 			fileName: paths.data.file,
 			edit: (json, file) => {
@@ -26,7 +26,6 @@ function data(done) {
 			eolc: 'CRLF'
 		}))
 		.pipe(dest(paths.data.temp))
-	done()
 }
 
 exports.data = data

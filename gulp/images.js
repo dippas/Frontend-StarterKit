@@ -4,10 +4,9 @@ const { src, dest, lastRun } = require('gulp'),
 	min = require('gulp-imagemin')
 
 //--------- Images
-function images(done) {
-	src(paths.images.src, { since: lastRun(images) })
+function images() {
+	return src(paths.images.src, { since: lastRun(images) })
 		.pipe(min())
 		.pipe(dest(paths.images.dest))
-	done()
 }
 exports.images = images

@@ -1,18 +1,18 @@
 //--------- Include references
-const { src, dest, lastRun } = require('gulp'),
+const { src, dest, series } = require('gulp'),
 	paths = require('./_config'),
 	concat = require('gulp-concat'),
 	sourcemaps = require('gulp-sourcemaps'),
 	rename = require('gulp-rename'),
-	plumber = require('gulp-plumber'), 
+	plumber = require('gulp-plumber'), //does not crash if error occurs
 	lec = require('gulp-line-ending-corrector'),
-	esLint = require('gulp-eslint'),
-	remember = require('gulp-remember')
+	babel = require('gulp-babel'),
+	esLint = require('gulp-eslint')
 
 //--------- Script : javascript
-function scripts(done) {
+function scriptsVendor() {
 	//vendor scripts	
-	src(paths.scripts.vendor)
+	return src(paths.scripts.vendor)
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
 		.pipe(concat('vendor.js'))
@@ -23,16 +23,22 @@ function scripts(done) {
 			eolc: 'CRLF'
 		}))
 		.pipe(sourcemaps.write('.'))
+		.pipe(dest(paths.scripts.dist.vendorProd))
 		.pipe(dest(paths.scripts.dist.vendor))
+}
 
+function scriptsApp() {
 	//app scripts
-	src(paths.scripts.app.src, { since: lastRun(scripts) })
+	return src(paths.scripts.app.src)
 		.pipe(plumber())
 		.pipe(esLint())
 		.pipe(esLint.format('table'))
 		.pipe(esLint.failAfterError())
 		.pipe(sourcemaps.init())
-		.pipe(remember(paths.scripts.app.src))
+		.pipe(babel({
+			'presets': ['@babel/preset-env'],
+			'sourceType': 'script'
+		}))
 		.pipe(concat('app.js'))
 		.pipe(rename({
 			basename: 'app'
@@ -41,8 +47,10 @@ function scripts(done) {
 			eolc: 'CRLF'
 		}))
 		.pipe(sourcemaps.write('.'))
+		.pipe(dest(paths.scripts.dist.appProd))
 		.pipe(dest(paths.scripts.dist.app))
-	done()
 }
+
+const scripts = series(scriptsVendor, scriptsApp)
 
 exports.scripts = scripts
