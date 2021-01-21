@@ -27,7 +27,7 @@
 	"bugs": "https://github.com/dippas/Frontend-StarterKit/issues",
 	"license": "MIT",
 	"devDependencies": {
-		"autoprefixer": "^10.0.1",
+		"autoprefixer": "^10.2.3",
 		"browser-sync": "^2.26.13",
 		"del": "^6.0.0",
 		"graceful-fs": "^4.2.4",
@@ -46,12 +46,12 @@
 		"gulp-rename": "^2.0.0",
 		"gulp-sass": "^4.1.0",
 		"gulp-sass-lint": "^1.4.0",
-		"gulp-sourcemaps": "^2.6.5",
+		"gulp-sourcemaps": "^3.0.0",
 		"path": "^0.12.7",
-		"postcss": "^8.1.2"
+		"postcss": "^8.2.4"
 	},
 	"dependencies": {
-		"fever-cookies-plugin": "^1.5.1"
+		"fever-cookies-plugin": "^2.0.1"
 	},
 	"browserslist": [
 		"last 3 versions",
