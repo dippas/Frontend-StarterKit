@@ -159,7 +159,6 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
     |   \---app
     |       +---core
     |       |       @cookies.js
-    |       |       @objectFit.js
     |       |       @outlineAccessibility.js
     |       |       @preloader.js
     |       |       @scrollToElement.js
@@ -219,7 +218,6 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
 
 ## Notes
 
-- To see changes with gulp running in the ***data*** folder hit `ctrl + s` **twice** in a row.
 - This Starterkit doesn't support Internet Explorer
 
 ## Contributing
