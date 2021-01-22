@@ -58,7 +58,7 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
 - Ability to add 3rd party plugins easily - `gulp/_config.js`
 - Minified CSS & JS in dist folder
 - SourceMaps for better debugging
-- Core JS files includes (e.g. - ObjectFit,  URL external fix for security issue)
+- Core JS files includes (e.g.: URL external fix for security issue)
 - Linting JS using [ESLint](https://www.npmjs.com/package/gulp-eslint)
 - Linting SCSS using [SassLint](https://www.npmjs.com/package/gulp-sass-lint)
 - Compiling HTML files from Pug
