@@ -89,14 +89,14 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
 |   |
 |   +---assets
 |   |   +---css
-|   |   |   |   styleguide.min.css
-|   |   |   |   styleguide.min.css.map
-|   |   |   |   styles.min.css
-|   |   |   |   styles.min.css.map
+|   |   |   |   styleguide.css
+|   |   |   |   styleguide.css.map
+|   |   |   |   styles.css
+|   |   |   |   styles.css.map
 |   |   |   |
 |   |   |   \---vendor
-|   |   |           vendor.min.css
-|   |   |           vendor.min.css.map
+|   |   |           vendor.css
+|   |   |           vendor.css.map
 |   |   |
 |   |   +---img
 |   |   |   \---favicon

@@ -3,7 +3,6 @@ const { src, dest, series } = require('gulp'),
 	paths = require('./_config'),
 	concat = require('gulp-concat'),
 	sourcemaps = require('gulp-sourcemaps'),
-	rename = require('gulp-rename'),
 	plumber = require('gulp-plumber'), //does not crash if error occurs
 	lec = require('gulp-line-ending-corrector'),
 	babel = require('gulp-babel'),
@@ -16,9 +15,6 @@ function scriptsVendor() {
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
 		.pipe(concat('vendor.js'))
-		.pipe(rename({
-			basename: 'vendor'
-		})) // rename file to 'vendor.js'
 		.pipe(lec({
 			eolc: 'CRLF'
 		}))
@@ -40,9 +36,6 @@ function scriptsApp() {
 			'sourceType': 'script'
 		}))
 		.pipe(concat('app.js'))
-		.pipe(rename({
-			basename: 'app'
-		})) // rename file to 'app.js'
 		.pipe(lec({
 			eolc: 'CRLF'
 		}))

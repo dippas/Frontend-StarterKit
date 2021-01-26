@@ -3,7 +3,6 @@ const { src, dest } = require('gulp'),
 	paths = require('./_config'),
 	concat = require('gulp-concat'),
 	sourcemaps = require('gulp-sourcemaps'),
-	rename = require('gulp-rename'),
 	plumber = require('gulp-plumber'), 
 	lec = require('gulp-line-ending-corrector'),
 	sass = require('gulp-sass'),
@@ -23,10 +22,6 @@ function coreStyles(basename, source, dist) {
 		}).on('error', sass.logError))
 		.pipe(cleanCSS())
 		.pipe(concat(`${basename}.css`))
-		.pipe(rename({
-			basename: basename,
-			suffix: '.min'
-		}))
 		.pipe(postCSS([
 			autoprefixer({
 				grid: 'autoplace'
