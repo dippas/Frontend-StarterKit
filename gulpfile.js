@@ -1,5 +1,5 @@
 //--------- Include files
-const { series, parallel } = require('gulp'),
+const { series } = require('gulp'),
 	cleanFile = require('./gulp/clean'),
 	extrasFile = require('./gulp/extras'),
 	htmlFile = require('./gulp/html'),
@@ -8,7 +8,7 @@ const { series, parallel } = require('gulp'),
 	serverFile = require('./gulp/server'),
 	stylesFile = require('./gulp/styles'),
 	videosFile = require('./gulp/videos'),
-	dev = series(cleanFile.clean, parallel(stylesFile.styles, scriptsFile.scripts, htmlFile.html, extrasFile.extras, imagesFile.images, videosFile.videos), stylesFile.sassLinter)
+	dev = series(cleanFile.clean, stylesFile.styles, scriptsFile.scripts, htmlFile.html, extrasFile.extras, imagesFile.images, videosFile.videos, stylesFile.sassLinter)
 
 //--------- Create tasks	
 exports.build = dev
