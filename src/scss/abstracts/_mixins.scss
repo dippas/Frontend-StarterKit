@@ -179,12 +179,11 @@
 }
 
 //https://stephanwagner.me/only-css-loading-spinner
-@mixin spinner($numberColors, $fillColor, $fillColor2: null, $fillColor3: null, $bgColor: transparent, $size: 2rem, $borderWidth: .1rem, $speed: .6s) {
+@mixin spinner($numberColors, $fillColor, $fillColor2: null, $fillColor3: null, $loading: '.btn--loading', $size: 2rem, $borderWidth: .1rem, $speed: .6s, $bgColor: transparent) {
 
-	.btn--loading {
+	#{$loading} {
 		position: relative;
 		&-spinner {
-			content: '';
 			@extend %position-center;
 			@include size($size);
 			margin-top: $size / -2;
