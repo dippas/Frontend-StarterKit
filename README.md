@@ -89,23 +89,27 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
 |   |
 |   +---assets
 |   |   +---css
-|   |   |   |   styleguide.css
-|   |   |   |   styleguide.css.map
-|   |   |   |   styles.css
-|   |   |   |   styles.css.map
+|   |   |   |   styleguide.min.css
+|   |   |   |   styleguide.min.css.map
+|   |   |   |   styles.min.css
+|   |   |   |   styles.css.min.map
 |   |   |   |
 |   |   |   \---vendor
-|   |   |           vendor.css
-|   |   |           vendor.css.map
+|   |   |           vendor.min.css
+|   |   |           vendor.min.css.map
 |   |   |
 |   |   +---img
 |   |   |   \---favicon
-|   |   |           android-chrome-192x192.png
-|   |   |           android-chrome-512x512.png
-|   |   |           apple-touch-icon.png
-|   |   |           favicon-16x16.png
-|   |   |           favicon-32x32.png
-|   |   |           favicon.ico
+|   |   |        apple-touch-icon-57x57.png
+|   |   |        apple-touch-icon-72x72.png
+|   |   |        apple-touch-icon-114x114.png
+|   |   |        apple-touch-icon-120x120.png
+|   |   |        apple-touch-icon-144x144.png
+|   |   |        apple-touch-icon-152x152.png
+|   |   |        favicon-16x16.png
+|   |   |        favicon-32x32.png
+|   |   |        favicon.ico
+|   |   |        mstile-144x144.png
 |   |   |
 |   |   \---js
 |   |       +---app
@@ -148,12 +152,16 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
     |
     +---img
     |   \---favicon
-    |           android-chrome-192x192.png
-    |           android-chrome-512x512.png
-    |           apple-touch-icon.png
-    |           favicon-16x16.png
-    |           favicon-32x32.png
-    |           favicon.ico
+    |   |        apple-touch-icon-57x57.png
+    |   |        apple-touch-icon-72x72.png
+    |   |        apple-touch-icon-114x114.png
+    |   |        apple-touch-icon-120x120.png
+    |   |        apple-touch-icon-144x144.png
+    |   |        apple-touch-icon-152x152.png
+    |   |        favicon-16x16.png
+    |   |        favicon-32x32.png
+    |   |        favicon.ico
+    |   |        mstile-144x144.png
     |
     +---js
     |   \---app
