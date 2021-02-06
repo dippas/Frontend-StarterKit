@@ -3,10 +3,11 @@ const { src, dest, series } = require('gulp'),
 	paths = require('./_config'),
 	concat = require('gulp-concat'),
 	sourcemaps = require('gulp-sourcemaps'),
-	plumber = require('gulp-plumber'), //does not crash if error occurs
+	plumber = require('gulp-plumber'), 
 	lec = require('gulp-line-ending-corrector'),
-	babel = require('gulp-babel'),
-	esLint = require('gulp-eslint')
+	esLint = require('gulp-eslint'),
+	terser = require('gulp-terser')
+
 
 //--------- Script : javascript
 function scriptsVendor() {
@@ -14,33 +15,28 @@ function scriptsVendor() {
 	return src(paths.scripts.vendor)
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
-		.pipe(concat('vendor.js'))
+		.pipe(terser())
+		.pipe(concat('vendor.min.js'))
 		.pipe(lec({
 			eolc: 'CRLF'
 		}))
 		.pipe(sourcemaps.write('.'))
-		.pipe(dest(paths.scripts.dist.vendorProd))
 		.pipe(dest(paths.scripts.dist.vendor))
 }
 
 function scriptsApp() {
 	//app scripts
 	return src(paths.scripts.app.src)
-		.pipe(plumber())
 		.pipe(esLint())
 		.pipe(esLint.format('table'))
 		.pipe(esLint.failAfterError())
+		.pipe(plumber())
 		.pipe(sourcemaps.init())
-		.pipe(babel({
-			'presets': ['@babel/preset-env'],
-			'sourceType': 'script'
-		}))
-		.pipe(concat('app.js'))
+		.pipe(concat('app.min.js'))
 		.pipe(lec({
 			eolc: 'CRLF'
 		}))
 		.pipe(sourcemaps.write('.'))
-		.pipe(dest(paths.scripts.dist.appProd))
 		.pipe(dest(paths.scripts.dist.app))
 }
 

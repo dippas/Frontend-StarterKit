@@ -1,7 +1,7 @@
 //--------- Include references
 const { src, dest, series, lastRun } = require('gulp'),
 	paths = require('./_config'),
-	plumber = require('gulp-plumber'), //does not crash if error occurs
+	plumber = require('gulp-plumber'), 
 	fs = require('graceful-fs'),
 	pug = require('gulp-pug'),
 	data = require('gulp-data'),
@@ -41,7 +41,7 @@ function views() {
 
 function templates() {
 	//templates
-	return src(paths.views.pug.templates)
+	return src(paths.views.pug.templates, { since: lastRun(templates) })
 		.pipe(plumber())
 		.pipe(data(() => JSON.parse(fs.readFileSync(`${paths.data.temp}${paths.data.file}`))))
 		.pipe(pug({
@@ -57,5 +57,6 @@ function templates() {
 const html = series(styleguide, views, templates)
 
 exports.data = series(styleguide, views)
-exports.templates = series(styleguide, templates)
+exports.styleguide = styleguide
+exports.templates = templates
 exports.html = html

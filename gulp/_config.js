@@ -51,7 +51,7 @@ module.exports = {
 			vendor: 'dist/assets/css/vendor/'
 		},
 		vendor: [
-			//ADD VENDORS HERE - path from Node_modules path
+			//ADD VENDORS HERE - path from Node_modules folder
 			path.join(__dirname, '..', 'node_modules', 'fever-cookies-plugin', 'dist', 'css', 'cookie.min.css') // USE IF USING COOKIES
 		]
 	},

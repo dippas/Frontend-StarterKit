@@ -21,7 +21,7 @@ function coreStyles(basename, source, dist) {
 			outputStyle: 'expanded', //nested, expanded, compact, compressed
 		}).on('error', sass.logError))
 		.pipe(cleanCSS())
-		.pipe(concat(`${basename}.css`))
+		.pipe(concat(`${basename}.min.css`))
 		.pipe(postCSS([
 			autoprefixer({
 				grid: 'autoplace'

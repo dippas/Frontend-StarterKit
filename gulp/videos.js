@@ -6,7 +6,6 @@ const { src, dest, lastRun } = require('gulp'),
 function videos() {
 	return src(paths.videos.src, { since: lastRun(videos) })
 		.pipe(dest(paths.videos.dest))
-		.pipe(dest(paths.videos.destProd))
 }
 
 exports.videos = videos
