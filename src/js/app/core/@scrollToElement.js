@@ -30,31 +30,28 @@ const scrollToElement = {
 		animateScroll()
 	},
 
-	fxScrollTo(btnScrollTo) {
-		btnScrollTo.forEach(button => {
-			button.addEventListener('click', e => {
-				e.preventDefault()
-				const target = document.getElementById(e.currentTarget.dataset.scroll),
-					headerHeight = this.el.header.offsetHeight,
-					supportsNativeSmoothScroll = 'scrollBehavior' in document.documentElement.style
+	fxScrollTo(e) {
+		e.preventDefault()
+		const buttonScrollTo = e.currentTarget,
+			target = document.getElementById(buttonScrollTo.dataset.scroll),
+			headerHeight = this.el.header.offsetHeight,
+			supportsNativeSmoothScroll = 'scrollBehavior' in document.documentElement.style
 
-				if (target) {
-					if (supportsNativeSmoothScroll)
-						window.scroll({
-							behavior: 'smooth',
-							top: target.offsetTop - (this.el.header ? headerHeight : 0),
-							left: 0
-						})
+		if (target) {
+			if (supportsNativeSmoothScroll)
+				window.scroll({
+					behavior: 'smooth',
+					top: target.offsetTop - (this.el.header ? headerHeight : 0),
+					left: 0
+				})
 
-					else
-						this.fxSmoothScrollToPolyfill(target.offsetTop - (this.el.header ? headerHeight : 0), 1000)
-				}
-			})
-		})
+			else
+				this.fxSmoothScrollToPolyfill(target.offsetTop - (this.el.header ? headerHeight : 0), 1000)
+		}
 	},
 
 	events() {
-		this.fxScrollTo(this.el.btnScroll)
+		this.el.btnScroll.forEach(button => button.addEventListener('click', e => this.fxScrollTo(e)))
 	},
 
 	init() {

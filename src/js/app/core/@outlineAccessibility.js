@@ -1,10 +1,10 @@
-const accessibility = {
+const a11y = {
 	el: {
 		doc: document,
 		html: document.documentElement
 	},
 
-	events() {
+	fxAddA11yClass() {
 		this.el.doc.addEventListener('keydown', e => e.key === 'Tab' ? this.el.html.classList.add('a11y') : '')
 		this.el.doc.addEventListener('click', () => {
 			if (this.el.html.classList.contains('a11y'))
@@ -15,8 +15,8 @@ const accessibility = {
 	},
 
 	init() {
-		this.events()
+		this.fxAddA11yClass()
 	}
 }
 
-accessibility.init()
+a11y.init()

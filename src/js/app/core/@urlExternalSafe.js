@@ -4,12 +4,12 @@ const url = {
 		linkToNewTab: document.querySelectorAll('a[target="_blank"]')
 	},
 
-	events() {
+	fxFixUrlExternal() {
 		this.el.linkToNewTab.forEach(el => el.setAttribute('rel', 'noopener noreferrer'))
 	},
 
 	init() {
-		this.events()
+		this.fxFixUrlExternal()
 	}
 }
 
