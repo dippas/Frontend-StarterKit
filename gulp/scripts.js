@@ -32,6 +32,7 @@ function scriptsApp() {
 		.pipe(esLint.failAfterError())
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
+		.pipe(terser())		
 		.pipe(concat('app.min.js'))
 		.pipe(lec({
 			eolc: 'CRLF'
