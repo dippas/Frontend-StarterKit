@@ -48,7 +48,7 @@
 		"gulp-sourcemaps": "^3.0.0",
 		"gulp-terser": "^2.0.1",
 		"path": "^0.12.7",
-		"postcss": "^8.2.4"
+		"postcss": "^8.2.10"
 	},
 	"dependencies": {
 		"fever-cookies-plugin": "^2.1.1"
