@@ -5,7 +5,7 @@
 	},
 	"extends": "eslint:recommended",
 	"parserOptions": {
-		"ecmaVersion": 2018,
+		"ecmaVersion": 2020,
 		"sourceType": "script"
 	},
 	"rules": {
@@ -28,6 +28,24 @@
 		"func-style": [2, "declaration", {
 			"allowArrowFunctions": true
 		}],
-		"comma-dangle": [2, "never"]
+		"comma-dangle": [2, "never"],
+		"object-curly-spacing": [2, "always"],
+		"arrow-spacing": [2, {
+			"before": true,
+			"after": true
+		}],
+		"array-bracket-newline": [2, "never"],
+		"no-extra-parens": [2, "all", {
+			"returnAssign": false
+		}],
+		"comma-spacing": [2, {
+			"before": false,
+			"after": true
+		}],
+		"no-template-curly-in-string": 2,
+		"no-eval": 2,
+		"space-infix-ops": [2, { 
+			"int32Hint": false 
+		}]
 	}
 }

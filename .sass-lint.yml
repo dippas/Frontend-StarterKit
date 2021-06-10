@@ -25,6 +25,9 @@ rules:
   no-qualifying-elements:
   - 1
   - allow-element-with-attribute: true
+  no-vendor-prefixes: 
+  - 1
+  - ignore-non-standard:  true
   single-line-per-selector: 2
   no-empty-rulesets: 2
   no-important: 2
@@ -62,3 +65,6 @@ rules:
   class-name-format:
   - 2
   - convention: hyphenatedbem
+  bem-depth:
+  - 2
+  - max-depth: 1
