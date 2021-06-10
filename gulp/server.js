@@ -34,7 +34,6 @@ function localServer(done) {
 //--------- Reload browser Sync
 function reload(done) {
 	browserSync.reload()
-
 	done()
 }
 
@@ -42,8 +41,7 @@ function reload(done) {
 function watchAssets(done) {
 	watch(paths.styles.app.watch, series(stylesFile.styles, stylesFile.sassLinter, reload))
 	watch(paths.scripts.app.watch, series(scriptsFile.scripts, reload))
-	watch(paths.views.index.src, series(htmlFile.styleguide, reload))
-	watch(paths.views.pug.watch, series(htmlFile.templates, reload))
+	watch(paths.views.pug.watch, series(htmlFile.html, reload))
 	watch(paths.images.watch, series(imagesFile.images, reload))
 	watch(paths.data.src, series(dataFile.data, htmlFile.html, reload))
 
@@ -51,5 +49,4 @@ function watchAssets(done) {
 }
 
 const server = series(localServer, watchAssets)
-
 exports.server = server

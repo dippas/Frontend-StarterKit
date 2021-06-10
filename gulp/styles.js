@@ -2,8 +2,7 @@
 const { src, dest } = require('gulp'),
 	paths = require('./_config'),
 	concat = require('gulp-concat'),
-	sourcemaps = require('gulp-sourcemaps'),
-	plumber = require('gulp-plumber'), 
+	plumber = require('gulp-plumber'),
 	lec = require('gulp-line-ending-corrector'),
 	sass = require('gulp-sass'),
 	cleanCSS = require('gulp-clean-css'),
@@ -14,7 +13,7 @@ const { src, dest } = require('gulp'),
 //--------- Compile Sass
 function coreStyles(basename, source, dist) {
 
-	return src(source)
+	return src(source, { sourcemaps: true })
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
 		.pipe(sass({
@@ -22,16 +21,12 @@ function coreStyles(basename, source, dist) {
 		}).on('error', sass.logError))
 		.pipe(cleanCSS())
 		.pipe(concat(`${basename}.min.css`))
-		.pipe(postCSS([
-			autoprefixer({
-				grid: 'autoplace'
-			})
-		]))
+		.pipe(postCSS([autoprefixer()]))
 		.pipe(lec({
 			eolc: 'CRLF'
 		}))
 		.pipe(sourcemaps.write('.'))
-		.pipe(dest(dist))
+		.pipe(dest(dist, { sourcemaps: '.' }))
 }
 
 function styles(done) {

@@ -1,5 +1,5 @@
 //--------- Include references
-const { src, dest, parallel, lastRun } = require('gulp'),
+const { src, dest, series, lastRun } = require('gulp'),
 	paths = require('./_config'),
 	lec = require('gulp-line-ending-corrector')
 
@@ -24,6 +24,14 @@ function pdfs() {
 		.pipe(dest(paths.pdfs.dest))	
 }
 
-const extras = parallel(fonts, json, pdfs)
+//--------- Videos
+function videos() {
+	return src(paths.videos.src, { since: lastRun(videos) })
+		.pipe(dest(paths.videos.dest))
+		.pipe(dest(paths.videos.destProd))
+}
+
+
+const extras = series(fonts, json, pdfs, videos)
 
 exports.extras = extras

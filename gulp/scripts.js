@@ -2,8 +2,7 @@
 const { src, dest, series } = require('gulp'),
 	paths = require('./_config'),
 	concat = require('gulp-concat'),
-	sourcemaps = require('gulp-sourcemaps'),
-	plumber = require('gulp-plumber'), 
+	plumber = require('gulp-plumber'),
 	lec = require('gulp-line-ending-corrector'),
 	esLint = require('gulp-eslint'),
 	terser = require('gulp-terser')
@@ -20,25 +19,23 @@ function scriptsVendor() {
 		.pipe(lec({
 			eolc: 'CRLF'
 		}))
-		.pipe(sourcemaps.write('.'))
 		.pipe(dest(paths.scripts.dist.vendor))
 }
 
 function scriptsApp() {
 	//app scripts
-	return src(paths.scripts.app.src)
+	return src(paths.scripts.app.src, { sourcemaps: true })
 		.pipe(esLint())
 		.pipe(esLint.format('table'))
 		.pipe(esLint.failAfterError())
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
-		.pipe(terser())		
+		.pipe(terser())
 		.pipe(concat('app.min.js'))
 		.pipe(lec({
 			eolc: 'CRLF'
 		}))
-		.pipe(sourcemaps.write('.'))
-		.pipe(dest(paths.scripts.dist.app))
+		.pipe(dest(paths.scripts.dist.app, { sourcemaps: '.' }))
 }
 
 const scripts = series(scriptsVendor, scriptsApp)
