@@ -4,7 +4,7 @@ const { src, dest } = require('gulp'),
 	concat = require('gulp-concat'),
 	plumber = require('gulp-plumber'),
 	lec = require('gulp-line-ending-corrector'),
-	sass = require('gulp-sass'),
+	sass = require('gulp-sass')(require('sass')),
 	cleanCSS = require('gulp-clean-css'),
 	postCSS = require('gulp-postcss'),
 	autoprefixer = require('autoprefixer'),
@@ -15,7 +15,6 @@ function coreStyles(basename, source, dist) {
 
 	return src(source, { sourcemaps: true })
 		.pipe(plumber())
-		.pipe(sourcemaps.init())
 		.pipe(sass({
 			outputStyle: 'expanded', //nested, expanded, compact, compressed
 		}).on('error', sass.logError))
@@ -25,7 +24,6 @@ function coreStyles(basename, source, dist) {
 		.pipe(lec({
 			eolc: 'CRLF'
 		}))
-		.pipe(sourcemaps.write('.'))
 		.pipe(dest(dist, { sourcemaps: '.' }))
 }
 

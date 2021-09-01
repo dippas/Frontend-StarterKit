@@ -15,16 +15,13 @@ function localServer(done) {
 		snippetOptions: {
 			rule: {
 				match: /<\/body>/i,
-				fn: (snippet, match) => {
-					return `${snippet}${match}`
-				}
+				fn: (snippet, match) => `${snippet}${match}`
 			}
 		},
-		//reloadDelay: 1000,
 		port: 9000,
 		ui: false,
 		notify: false,
-		open: false, //disable opening browser after running gulp
+		open: false,
 		server: 'dist'
 	})
 
@@ -40,7 +37,7 @@ function reload(done) {
 //--------- Watch
 function watchAssets(done) {
 	watch(paths.styles.app.watch, series(stylesFile.styles, stylesFile.sassLinter, reload))
-	watch(paths.scripts.app.watch, series(scriptsFile.scripts, reload))
+	watch(paths.scripts.app.watch, series(scriptsFile.scripts, scriptsFile.esLinter, reload))
 	watch(paths.views.pug.watch, series(htmlFile.html, reload))
 	watch(paths.images.watch, series(imagesFile.images, reload))
 	watch(paths.data.src, series(dataFile.data, htmlFile.html, reload))

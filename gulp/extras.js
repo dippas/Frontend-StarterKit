@@ -9,7 +9,7 @@ function fonts() {
 		.pipe(dest(paths.fonts.dest))	
 }
 
-//--------- json
+//--------- JSON
 function json() {
 	return src(paths.json.src, { since: lastRun(json) })
 		.pipe(lec({
@@ -28,9 +28,7 @@ function pdfs() {
 function videos() {
 	return src(paths.videos.src, { since: lastRun(videos) })
 		.pipe(dest(paths.videos.dest))
-		.pipe(dest(paths.videos.destProd))
 }
-
 
 const extras = series(fonts, json, pdfs, videos)
 

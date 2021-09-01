@@ -9,35 +9,38 @@ const { src, dest, series } = require('gulp'),
 
 
 //--------- Script : javascript
-function scriptsVendor() {
-	//vendor scripts	
-	return src(paths.scripts.vendor)
-		.pipe(plumber())
-		.pipe(sourcemaps.init())
+function coreScripts(basename, source, dist) {
+
+	return src(source, { sourcemaps: true })
 		.pipe(terser())
-		.pipe(concat('vendor.min.js'))
+		.pipe(concat(`${basename}.min.js`))
 		.pipe(lec({
 			eolc: 'CRLF'
 		}))
-		.pipe(dest(paths.scripts.dist.vendor))
+		.pipe(dest(dist, { sourcemaps: '.' }))
 }
 
-function scriptsApp() {
-	//app scripts
-	return src(paths.scripts.app.src, { sourcemaps: true })
+function scripts(done) {
+	coreScripts(
+		'vendor',
+		paths.scripts.vendor,
+		paths.scripts.dist.vendor
+	)
+	coreScripts(
+		'app',
+		paths.scripts.app.src,
+		paths.scripts.dist.app
+	)
+	done()
+}
+
+function esLinter() {
+	return src(paths.scripts.app.src)
+		.pipe(plumber())
 		.pipe(esLint())
 		.pipe(esLint.format('table'))
 		.pipe(esLint.failAfterError())
-		.pipe(plumber())
-		.pipe(sourcemaps.init())
-		.pipe(terser())
-		.pipe(concat('app.min.js'))
-		.pipe(lec({
-			eolc: 'CRLF'
-		}))
-		.pipe(dest(paths.scripts.dist.app, { sourcemaps: '.' }))
 }
 
-const scripts = series(scriptsVendor, scriptsApp)
-
 exports.scripts = scripts
+exports.esLinter = esLinter

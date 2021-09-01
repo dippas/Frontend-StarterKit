@@ -1,5 +1,5 @@
 //--------- Include references
-const { src, dest, series, lastRun } = require('gulp'),
+const { src, dest, series } = require('gulp'),
 	paths = require('./_config'),
 	plumber = require('gulp-plumber'), 
 	fs = require('graceful-fs'),
