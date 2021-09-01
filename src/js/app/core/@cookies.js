@@ -105,7 +105,7 @@ const myCookieBarWithOptions = new FeverCookieBar({
 							m.parentNode.insertBefore(a, m)
 						})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga')
 
-						ga('create', 'UA-12345', {'clientId': clientIDHashed})
+						ga('create', 'UA-12345', { 'clientId': clientIDHashed })
 						ga('set', 'anonymizeIp', true)
 						ga('set', 'forceSSL', true)
 						ga('send', 'pageview')
@@ -126,7 +126,7 @@ const myCookieBarWithOptions = new FeverCookieBar({
 							m.parentNode.insertBefore(a, m)
 						})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga')
 
-						ga('create', 'UA-12345', {'storage': 'none',  'clientId': clientIDHashed})
+						ga('create', 'UA-12345', { 'storage': 'none',  'clientId': clientIDHashed })
 						ga('set', 'anonymizeIp', true)
 						ga('set', 'forceSSL', true)
 						ga('send', 'pageview')

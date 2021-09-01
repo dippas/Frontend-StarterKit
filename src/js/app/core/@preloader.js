@@ -1,22 +1,35 @@
 /*eslint-disable no-unused-vars*/
 const preloader = {
-	fxPreloaderAdd(el) {
-		const button = {
-			el: el.querySelector('.js-preloader'),
-			height: el.querySelector('.js-preloader').offsetHeight
-		}
-		button.el.setAttribute('disabled', true)
-		button.el.classList.add('btn--loading')
-		button.el.style.height = `${button.height}px`
+
+	fxEnableButton(el) {
+		el.removeAttribute('disabled')
+	},
+
+	fxDisableButton(el) {
+		el.setAttribute('disabled', true)
+	},
+
+	fxCreateSpinner(el) {
 		const spinner = document.createElement('div')
 		spinner.classList.add('btn--loading-spinner')
-		el.querySelector('.btn--loading').appendChild(spinner)
+		el.appendChild(spinner)
+	},
+
+	fxRemoveSpinner(el) {
+		el.querySelector('.btn--loading-spinner').remove()
+	},
+
+	fxPreloaderAdd(el) {
+		const button = el.querySelector('.js-preloader')
+		button.classList.add('btn--loading')
+		this.fxDisableButton(button)
+		this.fxCreateSpinner(button)
 	},
 
 	fxPreloaderRemove(el) {
 		const button = el.querySelector('.js-preloader')
-		button.removeAttribute('disabled')
 		button.classList.remove('btn--loading')
-		button.querySelector('.btn--loading-spinner').outerHTML = ''
+		this.fxEnableButton(button)
+		this.fxRemoveSpinner(button)
 	}
 }

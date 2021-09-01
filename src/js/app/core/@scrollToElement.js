@@ -4,7 +4,7 @@ const scrollToElement = {
 		header: document.querySelector('.header')
 	},
 
-	// polyfilled smooth scrolling for IE, Edge & Safari
+	// polyfilled smooth scrolling for Edge & Safari
 	fxSmoothScrollToPolyfill(to, duration) {
 		const element = document.scrollingElement || document.documentElement,
 			start = element.scrollTop,
@@ -51,7 +51,8 @@ const scrollToElement = {
 	},
 
 	events() {
-		this.el.btnScroll.forEach(button => button.addEventListener('click', e => this.fxScrollTo(e)))
+		for (const button of this.el.btnScroll)
+			button.addEventListener('click', e => this.fxScrollTo(e))
 	},
 
 	init() {
