@@ -1,6 +1,5 @@
 @mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
 
-	//not being used in this project
 	@each $property in $properties {
 		#{$property}: $min-value;
 	}
@@ -160,6 +159,14 @@
 	@include transform(scale($key));
 }
 
+@mixin scaleX($key) {
+	@include transform(scaleX($key));
+}
+
+@mixin scaleY($key) {
+	@include transform(scaleY($key));
+}
+
 @mixin scale3d($key...) {
 	@include transform(scale3d($key));
 }
@@ -169,13 +176,29 @@
 	@include transform(translate($x, $y));
 }
 
+@mixin translateX($x) {
+	@include transform(translateX($x));
+}
+
+@mixin translateY($x) {
+	@include transform(translateY($x));
+}
+
 // skew
 @mixin skew($x, $y) {
 	@include transform(skew(#{$x}deg, #{$y}deg));
 }
 
+@mixin skewX($x) {
+	@include transform(skewX(#{$x}deg));
+}
+
+@mixin skewY($y) {
+	@include transform(skewY(#{$y}deg));
+}
+
 @mixin font-tracking($value) {
-	letter-spacing: ($value / 1000) + rem;
+	letter-spacing: math.div($value, 1000) + rem;
 }
 
 //https://stephanwagner.me/only-css-loading-spinner
@@ -186,8 +209,8 @@
 		&-spinner {
 			@extend %position-center;
 			@include size($size);
-			margin-top: $size / -2;
-			margin-left: $size / -2;
+			margin-top: math.div($size, -2);
+			margin-left: math.div($size, -2);
 			border-radius: 50%;
 			border: $borderWidth solid $bgColor;
 			@if $numberColors == 1 {
