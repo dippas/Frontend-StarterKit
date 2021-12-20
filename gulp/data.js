@@ -1,31 +1,28 @@
-//--------- Include references
-const { src, dest } = require('gulp'),
-	paths = require('./_config'),
-	path = require('path'),
-	merge = require('gulp-merge-json'),
-	lec = require('gulp-line-ending-corrector')
+import gulp from 'gulp'
+import config from './_config.js'
+import lec from 'gulp-line-ending-corrector'
+import path from 'path'
+import merge from 'gulp-merge-json'
 
-//---------  pug from json
+const { src, dest } = gulp
+
 function data() {
-	return src(paths.data.src)
+	return src(config.data.src)
 		.pipe(merge({
-			fileName: paths.data.file,
+			fileName: config.data.file,
 			edit: (json, file) => {
-				// Extract the filename and strip the extension
-				let filename = path.basename(file.path),
+				const filename = path.basename(file.path),
 					primaryKey = filename.replace(path.extname(filename), '')
 
-				// Set the filename as the primary key for our JSON data
 				const data = {}
 				data[primaryKey] = json
-
+				
 				return data
 			}
 		}))
-		.pipe(lec({
-			eolc: 'CRLF'
-		}))
-		.pipe(dest(paths.data.temp))
+		.pipe(lec({ eolc: 'CRLF' }))
+		.pipe(dest(config.data.temp))
+
 }
 
-exports.data = data
+export default data

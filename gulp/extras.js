@@ -1,35 +1,30 @@
-//--------- Include references
-const { src, dest, series, lastRun } = require('gulp'),
-	paths = require('./_config'),
-	lec = require('gulp-line-ending-corrector')
+import gulp from 'gulp'
+import config from './_config.js'
+import lec from 'gulp-line-ending-corrector'
 
-//--------- Fonts
+const { src, dest, series, lastRun } = gulp
+
 function fonts() {
-	return src(paths.fonts.src, { since: lastRun(fonts) })
-		.pipe(dest(paths.fonts.dest))	
+	return src(config.fonts.src, { since: lastRun(fonts) })
+		.pipe(dest(config.fonts.dest))
 }
 
-//--------- JSON
 function json() {
-	return src(paths.json.src, { since: lastRun(json) })
-		.pipe(lec({
-			eolc: 'CRLF'
-		}))
-		.pipe(dest(paths.json.dest))	
+	return src(config.json.src, { since: lastRun(json) })
+		.pipe(lec({ eolc: 'CRLF' }))
+		.pipe(dest(config.json.dest))
 }
 
-//---------PDFs
 function pdfs() {
-	return src(paths.pdfs.src, { since: lastRun(pdfs) })
-		.pipe(dest(paths.pdfs.dest))	
+	return src(config.pdfs.src, { since: lastRun(pdfs) })
+		.pipe(dest(config.pdfs.dest))
 }
 
-//--------- Videos
 function videos() {
-	return src(paths.videos.src, { since: lastRun(videos) })
-		.pipe(dest(paths.videos.dest))
+	return src(config.videos.src, { since: lastRun(videos) })
+		.pipe(dest(config.videos.dest))
 }
 
 const extras = series(fonts, json, pdfs, videos)
 
-exports.extras = extras
+export default extras

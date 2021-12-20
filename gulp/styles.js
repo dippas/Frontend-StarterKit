@@ -1,63 +1,45 @@
-//--------- Include references
-const { src, dest } = require('gulp'),
-	paths = require('./_config'),
-	concat = require('gulp-concat'),
-	plumber = require('gulp-plumber'),
-	lec = require('gulp-line-ending-corrector'),
-	sass = require('gulp-sass')(require('sass')),
-	cleanCSS = require('gulp-clean-css'),
-	postCSS = require('gulp-postcss'),
-	autoprefixer = require('autoprefixer'),
-	sassLint = require('gulp-sass-lint')
+import gulp from 'gulp'
+import config from './_config.js'
+import lec from 'gulp-line-ending-corrector'
+import plumber from 'gulp-plumber'
+import concat from 'gulp-concat'
+import gulpif from 'gulp-if'
+import sassCompiler from 'sass'
+import gulpSass from 'gulp-sass'
+import postCSS from 'gulp-postcss'
+import autoprefixer from 'autoprefixer'
+import sassLint from 'gulp-sass-lint'
 
-//--------- Compile Sass
+const { src, dest } = gulp
+const sass = gulpSass(sassCompiler)
+
 function coreStyles(basename, source, dist) {
+
+	const isVendor = basename === 'vendor'
 
 	return src(source, { sourcemaps: true })
 		.pipe(plumber())
-		.pipe(sass({
-			outputStyle: 'expanded', //nested, expanded, compact, compressed
-		}).on('error', sass.logError))
-		.pipe(cleanCSS())
+		.pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
 		.pipe(concat(`${basename}.min.css`))
 		.pipe(postCSS([autoprefixer()]))
-		.pipe(lec({
-			eolc: 'CRLF'
-		}))
-		.pipe(dest(dist, { sourcemaps: '.' }))
+		.pipe(lec({ eolc: 'CRLF' }))
+		.pipe(dest(dist, gulpif(!isVendor, { sourcemaps: '.' })))
 }
 
+
 function styles(done) {
-	//vendor
-	coreStyles(
-		'vendor',
-		paths.styles.vendor,
-		paths.styles.dist.vendor
-	)
-
-	//styles DIST
-	coreStyles(
-		'styles',
-		paths.styles.app.src,
-		paths.styles.dist.dest
-	)
-
-	//styleGuide
-	coreStyles(
-		'styleguide',
-		paths.styles.app.srcSG,
-		paths.styles.dist.dest
-	)
+	coreStyles('vendor', config.styles.vendor, config.styles.dist.vendor)
+	coreStyles('styles', config.styles.app.src, config.styles.dist.dest)
+	coreStyles('styleguide', config.styles.app.srcSG, config.styles.dist.dest)
 	done()
 }
 
 function sassLinter() {
-	return src(paths.styles.app.watch)
+	return src(config.styles.app.watch)
 		.pipe(plumber())
 		.pipe(sassLint())
 		.pipe(sassLint.format())
 		.pipe(sassLint.failOnError())
 }
 
-exports.styles = styles
-exports.sassLinter = sassLinter
+export { styles, sassLinter }

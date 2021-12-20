@@ -1,12 +1,9 @@
-//--------- Include references
-const paths = require('./_config'),
-	del = require('del')
+import config from './_config.js'
+import del from 'del'
 
-
-//--------- Clean files
-function clean(done) {
-	del.sync(`${paths.views.index.dest}*`)
+async function clean(done) {
+	await del.sync(`${config.views.index.dest}*`)
 	done()
 }
 
-exports.clean = clean
+export default clean

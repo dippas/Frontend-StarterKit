@@ -1,6 +1,6 @@
 {
 	"name": "frontend-starterkit",
-	"version": "2.0.0",
+	"version": "3.0.0",
 	"description": "Frontend StarterKit for websites - [Gulp 4, Pug, SCSS, ES6]",
 	"author": {
 		"name": "dippas",
@@ -24,11 +24,13 @@
 		"type": "git",
 		"url": "https://github.com/dippas/Frontend-StarterKit"
 	},
+	"type": "module",
 	"bugs": "https://github.com/dippas/Frontend-StarterKit/issues",
+	"funding": "https://www.buymeacoffee.com/dippas",
 	"license": "MIT",
 	"devDependencies": {
-		"autoprefixer": "^10.3.3",
-		"browser-sync": "^2.27.5",
+		"autoprefixer": "^10.4.0",
+		"browser-sync": "^2.27.7",
 		"del": "^6.0.0",
 		"graceful-fs": "^4.2.8",
 		"gulp": "^4.0.2",
@@ -36,19 +38,21 @@
 		"gulp-concat": "^2.6.1",
 		"gulp-data": "^1.3.1",
 		"gulp-eslint": "^6.0.0",
-		"gulp-imagemin": "^7.1.0",
+		"gulp-if": "^3.0.0",
+		"gulp-imagemin": "^8.0.0",
 		"gulp-line-ending-corrector": "^1.0.3",
 		"gulp-merge-json": "^2.1.1",
+		"gulp-minify": "^3.1.0",
 		"gulp-plumber": "^1.2.1",
 		"gulp-postcss": "^9.0.1",
 		"gulp-pug": "^5.0.0",
 		"gulp-remember": "^1.0.1",
 		"gulp-sass": "^5.0.0",
 		"gulp-sass-lint": "^1.4.0",
-		"gulp-terser": "^2.0.1",
+		"gulp-terser": "^2.1.0",
 		"path": "^0.12.7",
-		"postcss": "^8.3.6",
-		"sass": "^1.38.2"
+		"postcss": "^8.4.5",
+		"sass": "^1.45.0"
 	},
 	"dependencies": {
 		"fever-cookies-plugin": "^2.2.0"

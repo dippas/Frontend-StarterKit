@@ -1,12 +1,13 @@
-//--------- Include references
-const { src, dest, lastRun } = require('gulp'),
-	paths = require('./_config'),
-	min = require('gulp-imagemin')
+import gulp from 'gulp'
+import config from './_config.js'
+import min from 'gulp-imagemin'
 
-//--------- Images
+const { src, dest, lastRun } = gulp
+
 function images() {
-	return src(paths.images.src, { since: lastRun(images) })
+	return src(config.images.src, { since: lastRun(images) })
 		.pipe(min())
-		.pipe(dest(paths.images.dest))
+		.pipe(dest(config.images.dest))
 }
-exports.images = images
+
+export default images

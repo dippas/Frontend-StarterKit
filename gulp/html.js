@@ -1,59 +1,40 @@
-//--------- Include references
-const { src, dest, series } = require('gulp'),
-	paths = require('./_config'),
-	plumber = require('gulp-plumber'), 
-	fs = require('graceful-fs'),
-	pug = require('gulp-pug'),
-	data = require('gulp-data'),
-	lec = require('gulp-line-ending-corrector')
+import gulp from 'gulp'
+import config from './_config.js'
+import lec from 'gulp-line-ending-corrector'
+import plumber from 'gulp-plumber'
+import fs from 'graceful-fs'
+import pug from 'gulp-pug'
+import data from 'gulp-data'
 
-//--------- styleguide for presentation files
+const { src, dest, series } = gulp
+
 function styleguide() {
-	// list templates
-	return src(paths.views.index.src)
+	return src(config.views.index.src)
 		.pipe(plumber())
-		.pipe(data(() => JSON.parse(fs.readFileSync(`${paths.data.temp}${paths.data.file}`))))
-		.pipe(pug({
-			pretty: true,
-			basedir: 'src'
-		}))
-		.pipe(lec({
-			eolc: 'CRLF'
-		}))
-		.pipe(dest(paths.views.index.dest))
+		.pipe(data(() => JSON.parse(fs.readFileSync(`${config.data.temp}${config.data.file}`))))
+		.pipe(pug({ pretty: true, basedir: 'src' }))
+		.pipe(lec({ eolc: 'CRLF' }))
+		.pipe(dest(config.views.index.dest))
 }
 
-//--------- Views : Pug
 function views() {
-	// sources
-	return src(paths.views.pug.src)
+	return src(config.views.pug.src)
 		.pipe(plumber())
-		.pipe(data(() => JSON.parse(fs.readFileSync(`${paths.data.temp}${paths.data.file}`))))
-		.pipe(pug({
-			pretty: true,
-			basedir: 'src'
-		}))
-		.pipe(lec({
-			eolc: 'CRLF'
-		}))
-		.pipe(dest(paths.views.pug.dest))
+		.pipe(data(() => JSON.parse(fs.readFileSync(`${config.data.temp}${config.data.file}`))))
+		.pipe(pug({ pretty: true, basedir: 'src' }))
+		.pipe(lec({ eolc: 'CRLF' }))
+		.pipe(dest(config.views.pug.dest))
 }
 
 function templates() {
-	//templates
-	return src(paths.views.pug.templates)
+	return src(config.views.pug.templates)
 		.pipe(plumber())
-		.pipe(data(() => JSON.parse(fs.readFileSync(`${paths.data.temp}${paths.data.file}`))))
-		.pipe(pug({
-			pretty: true,
-			basedir: 'src'
-		}))
-		.pipe(lec({
-			eolc: 'CRLF'
-		}))
-		.pipe(dest(`${paths.views.pug.dest}/templates`))
+		.pipe(data(() => JSON.parse(fs.readFileSync(`${config.data.temp}${config.data.file}`))))
+		.pipe(pug({ pretty: true, basedir: 'src' }))
+		.pipe(lec({ eolc: 'CRLF' }))
+		.pipe(dest(`${config.views.pug.dest}/templates`))
 }
 
 const html = series(views, templates, styleguide)
 
-exports.html = html
+export default html

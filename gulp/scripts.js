@@ -1,46 +1,33 @@
-//--------- Include references
-const { src, dest, series } = require('gulp'),
-	paths = require('./_config'),
-	concat = require('gulp-concat'),
-	plumber = require('gulp-plumber'),
-	lec = require('gulp-line-ending-corrector'),
-	esLint = require('gulp-eslint'),
-	terser = require('gulp-terser')
+import gulp from 'gulp'
+import config from './_config.js'
+import lec from 'gulp-line-ending-corrector'
+import plumber from 'gulp-plumber'
+import concat from 'gulp-concat'
+import eslint from 'gulp-eslint'
+import gulpif from 'gulp-if'
+import terser from 'gulp-terser'
 
+const { src, dest } = gulp
 
-//--------- Script : javascript
 function coreScripts(basename, source, dist) {
 
+	const isDev = dist === config.scripts.dist.app
+
 	return src(source, { sourcemaps: true })
-		.pipe(terser())
+		.pipe(plumber())
+		.pipe(gulpif(isDev, eslint()))
+		.pipe(eslint.format('table'))
+		.pipe(eslint.failAfterError())
 		.pipe(concat(`${basename}.min.js`))
-		.pipe(lec({
-			eolc: 'CRLF'
-		}))
+		.pipe(terser())
+		.pipe(lec({ eolc: 'CRLF' }))
 		.pipe(dest(dist, { sourcemaps: '.' }))
 }
 
 function scripts(done) {
-	coreScripts(
-		'vendor',
-		paths.scripts.vendor,
-		paths.scripts.dist.vendor
-	)
-	coreScripts(
-		'app',
-		paths.scripts.app.src,
-		paths.scripts.dist.app
-	)
+	coreScripts('vendor', config.scripts.vendor, config.scripts.dist.vendor)
+	coreScripts('app', config.scripts.app.src, config.scripts.dist.app)
 	done()
 }
 
-function esLinter() {
-	return src(paths.scripts.app.src)
-		.pipe(plumber())
-		.pipe(esLint())
-		.pipe(esLint.format('table'))
-		.pipe(esLint.failAfterError())
-}
-
-exports.scripts = scripts
-exports.esLinter = esLinter
+export default scripts

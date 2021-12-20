@@ -1,15 +1,16 @@
-//--------- Include files
-const { series } = require('gulp'),
-	cleanFile = require('./gulp/clean'),
-	dataFile = require('./gulp/data'),
-	extrasFile = require('./gulp/extras'),
-	htmlFile = require('./gulp/html'),
-	imagesFile = require('./gulp/images'),
-	scriptsFile = require('./gulp/scripts'),
-	serverFile = require('./gulp/server'),
-	stylesFile = require('./gulp/styles'),
-	dev = series(cleanFile.clean, dataFile.data, stylesFile.styles, scriptsFile.scripts, htmlFile.html, extrasFile.extras, imagesFile.images, scriptsFile.esLinter, stylesFile.sassLinter)
+import gulp from 'gulp'
+import clean from './gulp/clean.js'
+import data from './gulp/data.js'
+import extras from './gulp/extras.js'
+import html from './gulp/html.js'
+import images from './gulp/images.js'
+import scripts from './gulp/scripts.js'
+import server from './gulp/server.js'
+import { styles, sassLinter } from './gulp/styles.js'
+
+const { series } = gulp
+const dev = series(clean, data, styles, scripts, extras, html, images, sassLinter)
 
 //--------- Create tasks
-exports.build = dev
-exports.default = serverFile.server
+export const build = dev
+export default server

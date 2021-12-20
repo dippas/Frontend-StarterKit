@@ -1,8 +1,8 @@
-//--------- Include references
-const path = require('path')
+import path from 'path'
 
-//--------- Paths
-module.exports = {
+const __dirname = path.resolve()
+
+const config = {
 	data: {
 		src: 'src/data/*.json',
 		temp: 'src/data/temp/',
@@ -19,7 +19,7 @@ module.exports = {
 		},
 		vendor: [
 			//ADD VENDORS HERE - path from Node_modules path
-			path.join(__dirname, '..', 'node_modules', 'fever-cookies-plugin', 'dist', 'js', 'cookie.min.js'), // USE IF USING COOKIES
+			path.join(__dirname, 'node_modules', 'fever-cookies-plugin', 'dist', 'js', 'cookie.min.js'), // USE IF USING COOKIES
 		]
 	},
 	json: {
@@ -52,7 +52,7 @@ module.exports = {
 		},
 		vendor: [
 			//ADD VENDORS HERE - path from Node_modules folder
-			path.join(__dirname, '..', 'node_modules', 'fever-cookies-plugin', 'dist', 'css', 'cookie.min.css') // USE IF USING COOKIES
+			path.join(__dirname, 'node_modules', 'fever-cookies-plugin', 'dist', 'css', 'cookie.min.css') // USE IF USING COOKIES
 		]
 	},
 	pdfs: {
@@ -76,3 +76,5 @@ module.exports = {
 		dest: 'dist/assets/fonts/'
 	}
 }
+
+export default config

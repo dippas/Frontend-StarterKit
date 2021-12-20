@@ -1,12 +1,13 @@
-//--------- Include references
-const { watch, series } = require('gulp'),
-	paths = require('./_config'),
-	browserSync = require('browser-sync'),
-	dataFile = require('./data'),
-	htmlFile = require('./html'),
-	imagesFile = require('./images'),
-	scriptsFile = require('./scripts'),
-	stylesFile = require('./styles')
+import gulp from 'gulp'
+import config from './_config.js'
+import browserSync from 'browser-sync'
+import data from './data.js'
+import html from './html.js'
+import images from './images.js'
+import scripts from './scripts.js'
+import { styles, sassLinter } from './styles.js'
+
+const { watch, series } = gulp
 
 //--------- Browser sync - local Server
 function localServer(done) {
@@ -36,14 +37,15 @@ function reload(done) {
 
 //--------- Watch
 function watchAssets(done) {
-	watch(paths.styles.app.watch, series(stylesFile.styles, stylesFile.sassLinter, reload))
-	watch(paths.scripts.app.watch, series(scriptsFile.scripts, scriptsFile.esLinter, reload))
-	watch(paths.views.pug.watch, series(htmlFile.html, reload))
-	watch(paths.images.watch, series(imagesFile.images, reload))
-	watch(paths.data.src, series(dataFile.data, htmlFile.html, reload))
+	watch(config.styles.app.watch, series(styles, sassLinter, reload))
+	watch(config.scripts.app.watch, series(scripts, reload))
+	watch(config.views.pug.watch, series(html, reload))
+	watch(config.images.watch, series(images, reload))
+	watch(config.data.src, series(data, html, reload))
 
 	done()
 }
 
 const server = series(localServer, watchAssets)
-exports.server = server
+
+export default server
