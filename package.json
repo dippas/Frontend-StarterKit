@@ -1,6 +1,6 @@
 {
 	"name": "frontend-starterkit",
-	"version": "3.0.0",
+	"version": "3.0.1",
 	"description": "Frontend StarterKit for websites - [Gulp 4, Pug, SCSS, ES6]",
 	"author": {
 		"name": "dippas",
