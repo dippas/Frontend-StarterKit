@@ -3,7 +3,6 @@ import config from './_config.js'
 import lec from 'gulp-line-ending-corrector'
 import plumber from 'gulp-plumber'
 import concat from 'gulp-concat'
-import gulpif from 'gulp-if'
 import sassCompiler from 'sass'
 import gulpSass from 'gulp-sass'
 import postCSS from 'gulp-postcss'
@@ -15,15 +14,13 @@ const sass = gulpSass(sassCompiler)
 
 function coreStyles(basename, source, dist) {
 
-	const isVendor = basename === 'vendor'
-
 	return src(source, { sourcemaps: true })
 		.pipe(plumber())
 		.pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
 		.pipe(concat(`${basename}.min.css`))
 		.pipe(postCSS([autoprefixer()]))
 		.pipe(lec({ eolc: 'CRLF' }))
-		.pipe(dest(dist, gulpif(!isVendor, { sourcemaps: '.' })))
+		.pipe(dest(dist, { sourcemaps: '.' }))
 }
 
 

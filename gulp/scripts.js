@@ -4,18 +4,15 @@ import lec from 'gulp-line-ending-corrector'
 import plumber from 'gulp-plumber'
 import concat from 'gulp-concat'
 import eslint from 'gulp-eslint'
-import gulpif from 'gulp-if'
 import terser from 'gulp-terser'
 
 const { src, dest } = gulp
 
 function coreScripts(basename, source, dist) {
 
-	const isDev = dist === config.scripts.dist.app
-
 	return src(source, { sourcemaps: true })
 		.pipe(plumber())
-		.pipe(gulpif(isDev, eslint()))
+		.pipe(eslint())
 		.pipe(eslint.format('table'))
 		.pipe(eslint.failAfterError())
 		.pipe(concat(`${basename}.min.js`))
