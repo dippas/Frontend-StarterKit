@@ -225,7 +225,8 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
 
 ## Notes
 
-- This Starterkit doesn't support Internet Explorer
+- Doesn't support Internet Explorer
+- [gulp-cli](https://github.com/gulpjs/gulp-cli) must be v2.30+
 
 ## Contributing
 
