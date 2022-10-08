@@ -1,9 +1,9 @@
-import config from './_config.js'
-import del from 'del'
+import { config } from './_config.js';
+import { deleteAsync } from 'del';
 
-async function clean(done) {
-	await del.sync(`${config.views.index.dest}*`)
-	done()
-}
+const clean = async done => {
+  await deleteAsync(`${config.views.index.dest}*`);
+  done();
+};
 
-export default clean
+export default clean;

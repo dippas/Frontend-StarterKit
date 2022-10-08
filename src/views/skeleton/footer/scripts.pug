@@ -1,6 +1,6 @@
 if !isStyleGuide
-	script(src='/assets/js/vendor/vendor.min.js' defer)
-	script(src='/assets/js/app/app.min.js' defer)
+  script(src='/assets/js/vendor/vendor.min.js' defer)
+  script(src='/assets/js/app/app.min.js' defer)
 else
-	script.
-		document.querySelectorAll('.js-accordion').forEach(el => el.addEventListener('click', () => el.nextElementSibling.classList.toggle('hidden')))
+  script.
+    document.querySelectorAll('.js-accordion').forEach(el => el.addEventListener('click', () => el.nextElementSibling.classList.toggle('hidden')))

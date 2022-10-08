@@ -2,26 +2,26 @@ extends /views/styleguide/layout
 
 block styleguide
 
-	-
-		const templateName = 'Templates'
-			templateBlockName = 'Modules'
-			colorHeading = 'black'
+  -
+    const templateName = 'Templates'
+      templateBlockName = 'Modules'
+      colorHeading = 'black'
 
-	.styleguide__accordion
-		button.styleguide__button.js-accordion
-			h1(class=`text text--${colorHeading}`)=templateName
-		table.styleguide__table
-			thead
-				tr
-					th #
-					th Status
-					th Name
-					th Observations
-			tbody
-				each item in styleguide.templates
-					tr
-						td.text.text--center
-							span(class=`status status--${item.status}`)
-						td
-							a(href=`/views/templates/${item.href}.html`)=item.name
-						td=item.observations
+  .styleguide__accordion
+    button.styleguide__button.js-accordion
+      h1(class=`text text--${colorHeading}`)=templateName
+    table.styleguide__table
+      thead
+        tr
+          th #
+          th Status
+          th Name
+          th Observations
+      tbody
+        each item in styleguide.templates
+          tr
+            td.text.text--center
+              span(class=`status status--${item.status}`)
+            td
+              a(href=`/views/templates/${item.href}.html`)=item.name
+            td=item.observations

@@ -1,37 +1,29 @@
-// SCSS modules
-@use
-'sass:math';
+@use // SCSS modules
+  'sass:math';
 
-// reset
-@import
-'base/reset';
+@import // reset
+  'base/reset';
 
-// abstract
-@import
-'abstracts/variables',
-'abstracts/functions',
-'abstracts/mixins',
-'abstracts/placeholders',
-'abstracts/placeholders-includes';
+@import 
+  'abstracts/variables',
+  'abstracts/functions', 'abstracts/mixins', 'abstracts/placeholders',
+  'abstracts/placeholders-includes';
 
-// typograghy
-@import
-'base/typography';
+@import // typograghy
+  'base/typography';
 
 // layout
-@import
-//fonts
-'layout/fonts',
-//useful classes
-'layout/utils',
-///general rules
-'layout/general',
-//buttons
-'layout/buttons',
-//header	
-'layout/header',
-//footer	
-'layout/footer';
+@import //fonts
+  'layout/fonts',
+  //useful classes
+  'layout/utils',
+  ///general rules
+  'layout/general',
+  //buttons
+  'layout/buttons',
+  //header
+  'layout/header',
+  //footer
+  'layout/footer';
 
 // blocks sort by order A-Z
-

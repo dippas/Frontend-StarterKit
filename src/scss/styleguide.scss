@@ -1,15 +1,10 @@
-// reset
-@import
-'base/reset';
+@import // reset
+  'base/reset';
 
-// abstract
-@import
-'abstracts/variables',
-'abstracts/functions',
-'abstracts/mixins',
-'abstracts/placeholders',
-'abstracts/placeholders-includes';
+@import // abstract
+  'abstracts/variables',
+  'abstracts/functions', 'abstracts/mixins', 'abstracts/placeholders',
+  'abstracts/placeholders-includes';
 
-// layout
-@import
-'styleguide/styleguide';
+@import // layout
+  'styleguide/styleguide';

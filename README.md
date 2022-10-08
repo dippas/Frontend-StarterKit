@@ -58,8 +58,7 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
 - Minified CSS & JS in dist folder
 - SourceMaps for better debugging
 - Core JS files includes (e.g.: URL external fix for security issue)
-- Linting JS using [ESLint](https://www.npmjs.com/package/gulp-eslint)
-- Linting SCSS using [SassLint](https://www.npmjs.com/package/gulp-sass-lint)
+- Code Formatted with  [Prettier](https://prettier.io/)
 - Compiling HTML files from Pug
 - Writing Pug with JSON, to separate logic from content
 - Favicons Included
@@ -74,9 +73,8 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
 ## Project Structure
 
 ```html
-|   .eslintrc.json
+|   .prettierrc
 |   .gitignore
-|   .sass-lint.yml
 |   gulpfile.js
 |   LICENSE
 |   package-lock.json

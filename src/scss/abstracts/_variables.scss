@@ -1,9 +1,9 @@
 //CSS vars
 :root {
-	--base-font: 62.5%;
-	--black: #000;
-	--white: #fff;
-	--selection: #f60;
+  --base-font: 62.5%;
+  --black: #000;
+  --white: #fff;
+  --selection: #f60;
 }
 
 //breakpoint vars
@@ -16,15 +16,15 @@ $wide: 90em; //1440px
 $extra-wide: 100em; //1600px
 
 //breakpoints
-$breakpoints: ( //types
-	'extra-small': $extra-small,
-	'small': $small,
-	'medium': $medium,
-	'large': $large,
-	'extra-large': $extra-large,
-	'wide': $wide,
-	'extra-wide': $extra-wide
-	//finish types
+$breakpoints: (
+  //types
+  'extra-small': $extra-small,
+  'small': $small,
+  'medium': $medium,
+  'large': $large,
+  'extra-large': $extra-large,
+  'wide': $wide,
+  'extra-wide': $extra-wide //finish types
 );
 
 // Caching current breakpoint
@@ -37,45 +37,45 @@ $current-breakpoint: $default-breakpoint;
 $placeholders: ();
 
 //effects
-$ease: ( // list from https://css-tricks.com/snippets/sass/easing-map-get-function/
-	in-quad: cubic-bezier(.55, .085, .68, .53),
-	in-cubic: cubic-bezier(.55, .055, .675, .19),
-	in-quart: cubic-bezier(.895, .03, .685, .22),
-	in-quint: cubic-bezier(.755, .05, .855, .06),
-	in-sine: cubic-bezier(.47, 0, .745, .715),
-	in-expo: cubic-bezier(.95, .05, .795, .035),
-	in-circ: cubic-bezier(.6, .04, .98, .335),
-	in-back: cubic-bezier(.6, -.28, .735, .045),
-	out-quad: cubic-bezier(.25, .46, .45, .94),
-	out-cubic: cubic-bezier(.215, .61, .355, 1),
-	out-quart: cubic-bezier(.165, .84, .44, 1),
-	out-quint: cubic-bezier(.23, 1, .32, 1),
-	out-sine: cubic-bezier(.39, .575, .565, 1),
-	out-expo: cubic-bezier(.19, 1, .22, 1),
-	out-circ: cubic-bezier(.075, .82, .165, 1),
-	out-back: cubic-bezier(.175, .885, .32, 1.275),
-	in-out-quad: cubic-bezier(.455, .03, .515, .955),
-	in-out-cubic: cubic-bezier(.645, .045, .355, 1),
-	in-out-quart: cubic-bezier(.77, 0, .175, 1),
-	in-out-quint: cubic-bezier(.86, 0, .07, 1),
-	in-out-sine: cubic-bezier(.445, .05, .55, .95),
-	in-out-expo: cubic-bezier(1, 0, 0, 1),
-	in-out-circ: cubic-bezier(.785, .135, .15, .86),
-	in-out-back: cubic-bezier(.68, -.55, .265, 1.55)
-	// easing customs
+$ease: (
+  // list from https://css-tricks.com/snippets/sass/easing-map-get-function/
+  in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53),
+  in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19),
+  in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22),
+  in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06),
+  in-sine: cubic-bezier(0.47, 0, 0.745, 0.715),
+  in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035),
+  in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335),
+  in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045),
+  out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94),
+  out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1),
+  out-quart: cubic-bezier(0.165, 0.84, 0.44, 1),
+  out-quint: cubic-bezier(0.23, 1, 0.32, 1),
+  out-sine: cubic-bezier(0.39, 0.575, 0.565, 1),
+  out-expo: cubic-bezier(0.19, 1, 0.22, 1),
+  out-circ: cubic-bezier(0.075, 0.82, 0.165, 1),
+  out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275),
+  in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955),
+  in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1),
+  in-out-quart: cubic-bezier(0.77, 0, 0.175, 1),
+  in-out-quint: cubic-bezier(0.86, 0, 0.07, 1),
+  in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95),
+  in-out-expo: cubic-bezier(1, 0, 0, 1),
+  in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86),
+  in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55) // easing customs
 );
 
 //z-index
 $z-index: (
-	//values
-	'pothole': -1,
-	'basement': 0,
-	'sidewalk': 1,
-	'bungalow': 40,
-	'bungalow-chimney': 50,
-	'house': 60,
-	'tower': 70,
-	'skyscrapper': 80,
-	'sky': 90,
-	'satellite': 100
+  //values
+  'pothole': -1,
+  'basement': 0,
+  'sidewalk': 1,
+  'bungalow': 40,
+  'bungalow-chimney': 50,
+  'house': 60,
+  'tower': 70,
+  'skyscrapper': 80,
+  'sky': 90,
+  'satellite': 100
 );

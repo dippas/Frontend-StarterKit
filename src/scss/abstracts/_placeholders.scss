@@ -1,184 +1,182 @@
 %flex-wrap {
-	display: flex;
-	flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 %flex-center {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 %flex-center-v {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 %flex-center-h {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 %flex-column {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 %flex-column-wrap {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 %flex-column-center {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 %flex-column-center-v {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
 }
 
 %flex-column-center-h {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
 }
 
 %flex-between {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 %flex-between-center {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 %flex-between-column {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 %flex-between-column-center {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
-	flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 }
 
 %flex-around {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 %flex-around-center {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
 %flex-around-column {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 %flex-around-column-center {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
-	flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
 }
 
-
 %position-center {
-	@include position(absolute, top 50% left 50%);
-	@include translate(-50%, -50%);
+  @include position(absolute, top 50% left 50%);
+  @include translate(-50%, -50%);
 }
 
 %position-center-v {
-	@include position(absolute, top 50%);
-	@include translate(0, -50%);
+  @include position(absolute, top 50%);
+  @include translate(0, -50%);
 }
 
 %position-center-h {
-	@include position(absolute, left 50%);
-	@include translate(-50%, 0);
+  @include position(absolute, left 50%);
+  @include translate(-50%, 0);
 }
 
-
 %block-center {
-	margin-left: auto;
-	margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 %hide-element {
-	@include absolute(left -9999.9rem);
+  @include absolute(left -9999.9rem);
 }
 
 // a11y
 %outline-a11y {
-	html:not(.a11y) & {
-		outline: 0;
+  html:not(.a11y) & {
+    outline: 0;
 
-		&:focus {
-			outline: inherit;
-		}
-	}
+    &:focus {
+      outline: inherit;
+    }
+  }
 
-	&:focus {
-		.a11y & {
-			outline: thin dotted var(--black);
-		}
-	}
+  &:focus {
+    .a11y & {
+      outline: thin dotted var(--black);
+    }
+  }
 }
 
 // layout
 %body-layout {
-	@extend %flex-column;
-	height: 100vh;
-	overflow-x: hidden; //FIX prevent scroll from animations
+  @extend %flex-column;
+  height: 100vh;
+  overflow-x: hidden; //FIX prevent scroll from animations
 }
 
 %wrapper-layout {
-	flex: 1 0 auto; //FIX WEBKIT based browsers bug from letting these items shrink to smaller than their content's default minimum size.
+  flex: 1 0 auto; //FIX WEBKIT based browsers bug from letting these items shrink to smaller than their content's default minimum size.
 }
 
 %footer-layout {
-	flex-shrink: 0;
+  flex-shrink: 0;
 }
 
 %grid-spacing-small {
-	padding: 1.5rem;
+  padding: 1.5rem;
 
-	@include bp('medium') {
-		padding-left: 5.5rem;
-		padding-right: 5.5rem;
-	}
+  @include bp('medium') {
+    padding-left: 5.5rem;
+    padding-right: 5.5rem;
+  }
 
-	@include bp('large') {
-		padding-left: 9rem;
-		padding-right: 9rem;
-	}
+  @include bp('large') {
+    padding-left: 9rem;
+    padding-right: 9rem;
+  }
 }

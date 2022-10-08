@@ -1,25 +1,24 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box
+  box-sizing: border-box;
 }
 
 input,
 button,
 select,
 textarea {
-	@extend %outline-a11y;
-
+  @extend %outline-a11y;
 }
 
 [tabindex] {
-	@extend %outline-a11y;
+  @extend %outline-a11y;
 }
 
 a {
-	@extend %outline-a11y;
-	color: inherit;
-	text-decoration: none;
+  @extend %outline-a11y;
+  color: inherit;
+  text-decoration: none;
 }
 
 //remove default styles
@@ -27,73 +26,71 @@ input,
 button,
 select,
 textarea {
-	border: 0;
-	outline: 0;
-	background: transparent;
-	margin: 0;
-	padding: 0;
-	font-family: inherit;
-	font-size: inherit;
-	appearance: none;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  appearance: none;
 }
 
 input {
+  &[type='radio'],
+  &[type='checkbox'],
+  &[type='file'] {
+    @extend %hide-element;
+  }
 
-	&[type=radio],
-	&[type=checkbox],
-	&[type=file] {
-		@extend %hide-element;
-	}
-
-	&[type=search] {
-
-		//remove X from Chrome
-		&::-webkit-search-decoration,
-		&::-webkit-search-cancel-button,
-		&::-webkit-search-results-button,
-		&::-webkit-search-results-decoration {
-			display: none;
-		}
-	}
+  &[type='search'] {
+    //remove X from Chrome
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
+  }
 }
 
 strong {
-	font-weight: var(--fw-bold);
+  font-weight: var(--fw-bold);
 }
 
 em {
-	font-style: italic;
+  font-style: italic;
 }
 
 small,
 sub,
 sup {
-	font-size: .83em //sass-lint:disable-line property-units
+  font-size: 0.83em;
 }
 
 sub {
-	vertical-align: sub
+  vertical-align: sub;
 }
 
 sup {
-	vertical-align: super
+  vertical-align: super;
 }
 
 // style when selected mouse
 ::selection {
-	background-color: var(--selection);
-	color: var(--white);
+  background-color: var(--selection);
+  color: var(--white);
 }
 
 //layout
 body {
-	@extend %body-layout;
+  @extend %body-layout;
 }
 
 .wrapper {
-	@extend %wrapper-layout;
+  @extend %wrapper-layout;
 }
 
 .footer {
-	@extend %footer-layout;
+  @extend %footer-layout;
 }

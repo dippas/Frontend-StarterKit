@@ -1,94 +1,91 @@
 .sr-only {
-	@include absolute;
-	@include size(.1rem);
-	overflow: hidden;
-	clip-path: inset(50%);
-	border: 0;
-	white-space: nowrap;
+  @include absolute;
+  @include size(0.1rem);
+  overflow: hidden;
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
 
-	&-focusable {
-
-		&:active,
-		&:focus {
-			@include size(auto);
-			overflow: visible;
-			clip-path: none;
-			white-space: normal
-		}
-	}
+  &-focusable {
+    &:active,
+    &:focus {
+      @include size(auto);
+      overflow: visible;
+      clip-path: none;
+      white-space: normal;
+    }
+  }
 }
 
 .d-none {
-	display: none;
+  display: none;
 }
 
 //prevent transition
 .no-transition {
-	transition: none;
+  transition: none;
 }
 
 .no-margin {
-	margin: 0;
+  margin: 0;
 }
 
 .no-padding {
-	padding: 0;
+  padding: 0;
 }
 
 .x-center {
-	@extend %block-center;
+  @extend %block-center;
 }
 
 .no-scroll {
+  &-hidden {
+    overflow: hidden;
+  }
 
-	&-hidden {
-		overflow: hidden;
-	}
+  &.show-scrollbar {
+    overflow-y: scroll;
+  }
 
-	&.show-scrollbar {
-		overflow-y: scroll;
-	}
-
-	&-fixed {
-		@include fixed(top 0 right 0 bottom 0 left 0);
-	}
+  &-fixed {
+    @include fixed(top 0 right 0 bottom 0 left 0);
+  }
 }
 
 img {
-	&[data-object-fit=cover] {
-		object-fit: cover;
-	}
+  &[data-object-fit='cover'] {
+    object-fit: cover;
+  }
 
-	&[data-object-fit=contain] {
-		object-fit: contain;
-	}
+  &[data-object-fit='contain'] {
+    object-fit: contain;
+  }
 }
 
 .img {
+  &-fluid {
+    max-width: 100%;
+    display: block;
+  }
 
-	&-fluid {
-		max-width: 100%;
-		display: block;
-	}
+  &-full-width {
+    @include size(100%, auto);
+    display: block;
+  }
 
-	&-full-width {
-		@include size(100%, auto);
-		display: block;
-	}
+  &-full-height {
+    @include size(auto, 100%);
+    display: block;
+  }
 
-	&-full-height {
-		@include size(auto, 100%);
-		display: block;
-	}
+  &-full {
+    @include size(100%);
+    display: block;
+  }
 
-	&-full {
-		@include size(100%);
-		display: block;
-	}
-
-	&-circle {
-		@include border-radius(50%);
-	}
+  &-circle {
+    @include border-radius(50%);
+  }
 }
 
-@include spinner(1, var(--white))
+@include spinner(1, var(--white));

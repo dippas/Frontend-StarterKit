@@ -1,18 +1,18 @@
 block pageTitle
-	- const isStyleGuide = true
+  - const isStyleGuide = true
 doctype html
 html
-	head
-		-
-			const pageTitle = 'PageTitle' //replace this for each project
-				title = 'Styleguide :: Templates & Blocks'
+  head
+    -
+      const pageTitle = 'PageTitle' //replace this for each project
+        title = 'Styleguide :: Templates & Blocks'
 
-		include /views/skeleton/header/head
+    include /views/skeleton/header/head
 
-	body.styleguide
-		.styleguide__wrapper
-			include header
-			block styleguide				
-		include footer
-		include /views/skeleton/footer/scripts
-			
+  body.styleguide
+    .styleguide__wrapper
+      include header
+      block styleguide
+    include footer
+    include /views/skeleton/footer/scripts
+      
