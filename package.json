@@ -1,60 +1,60 @@
 {
-	"name": "frontend-starterkit",
-	"version": "3.1.0",
-	"description": "Frontend StarterKit for websites - [Gulp 4, Pug, SCSS, ES6]",
-	"author": {
-		"name": "dippas",
-		"email": "dippas.dev@gmail.com",
-		"url": "https://github.com/dippas"
-	},
-	"keywords": [
-		"FrontEnd",
-		"Frontend-Starterkit",
-		"Frontend-Boilerplate",
-		"Gulp 4",
-		"Pug",
-		"SCSS",
-		"SASS",
-		"ES6",
-		"EcmaScript",
-		"JS",
-		"javaScript"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/dippas/Frontend-StarterKit"
-	},
-	"type": "module",
-	"bugs": "https://github.com/dippas/Frontend-StarterKit/issues",
-	"funding": "https://www.buymeacoffee.com/dippas",
-	"license": "MIT",
-	"devDependencies": {
-		"autoprefixer": "^10.4.12",
-		"browser-sync": "^2.27.10",
-		"del": "^7.0.0",
-		"graceful-fs": "^4.2.10",
-		"gulp": "^4.0.2",
-		"gulp-clean-css": "^4.3.0",
-		"gulp-concat": "^2.6.1",
-		"gulp-data": "^1.3.1",
-		"gulp-imagemin": "^8.0.0",
-		"gulp-merge-json": "^2.1.2",
-		"gulp-minify": "^3.1.0",
-		"gulp-plumber": "^1.2.1",
-		"gulp-postcss": "^9.0.1",
-		"gulp-pug": "^5.0.0",
-		"gulp-remember": "^1.0.1",
-		"gulp-sass": "^5.1.0",
-		"gulp-terser": "^2.1.0",
-		"path": "^0.12.7",
-		"postcss": "^8.4.17",
-		"sass": "^1.55.0"
-	},
-	"dependencies": {
-		"fever-cookies-plugin": "^2.2.0"
-	},
-	"browserslist": [
-		"last 3 versions",
-		"not dead"
-	]
+  "name": "frontend-starterkit",
+  "version": "3.1.0",
+  "description": "Frontend StarterKit for websites - [Gulp 4, Pug, SCSS, ES6]",
+  "author": {
+    "name": "dippas",
+    "email": "dippas.dev@gmail.com",
+    "url": "https://github.com/dippas"
+  },
+  "keywords": [
+    "FrontEnd",
+    "Frontend-Starterkit",
+    "Frontend-Boilerplate",
+    "Gulp 4",
+    "Pug",
+    "SCSS",
+    "SASS",
+    "ES6",
+    "EcmaScript",
+    "JS",
+    "javaScript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dippas/Frontend-StarterKit"
+  },
+  "type": "module",
+  "bugs": "https://github.com/dippas/Frontend-StarterKit/issues",
+  "funding": "https://www.buymeacoffee.com/dippas",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.12",
+    "browser-sync": "^2.27.10",
+    "del": "^7.0.0",
+    "graceful-fs": "^4.2.10",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-data": "^1.3.1",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-merge-json": "^2.1.2",
+    "gulp-minify": "^3.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-pug": "^5.0.0",
+    "gulp-remember": "^1.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0",
+    "path": "^0.12.7",
+    "postcss": "^8.4.17",
+    "sass": "^1.55.0"
+  },
+  "dependencies": {
+    "fever-cookies-plugin": "^2.2.0"
+  },
+  "browserslist": [
+    "last 3 versions",
+    "not dead"
+  ]
 }
