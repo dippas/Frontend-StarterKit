@@ -6,7 +6,9 @@ This starterkit allows you to have a quickly start in building your website.
 
 ## Give some love
 
-[![bc](https://cdn.buymeacoffee.com/buttons/lato-black.png)](https://www.buymeacoffee.com/dippas)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-F16061?https://img.shields.io/badge/Ko--fi-F16061?style=flat-square&logo=ko-fi&logoColor=white)](https://ko-fi.com/dippas)
+[![BuyMeACoffee](https://img.shields.io/badge/-buy_me_a%C2%A0coffee-orange?style=flat-square&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/dippas)
+[![Paypal](https://img.shields.io/badge/PayPal-00457C?style=flat-square&logo=paypal)](http://paypal.me/fserpa)
 
 ## Table of Contents
 
