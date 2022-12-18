@@ -29,7 +29,7 @@
   "funding": "https://www.buymeacoffee.com/dippas",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^10.4.12",
+    "autoprefixer": "^10.4.13",
     "browser-sync": "^2.27.10",
     "del": "^7.0.0",
     "graceful-fs": "^4.2.10",
@@ -47,8 +47,8 @@
     "gulp-sass": "^5.1.0",
     "gulp-terser": "^2.1.0",
     "path": "^0.12.7",
-    "postcss": "^8.4.17",
-    "sass": "^1.55.0"
+    "postcss": "^8.4.20",
+    "sass": "^1.57.0"
   },
   "dependencies": {
     "fever-cookies-plugin": "^2.2.0"
