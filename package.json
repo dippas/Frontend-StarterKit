@@ -9,8 +9,8 @@
   },
   "keywords": [
     "FrontEnd",
-    "Frontend-Starterkit",
-    "Frontend-Boilerplate",
+    "Frontend Starterkit",
+    "Frontend Boilerplate",
     "Gulp 4",
     "Pug",
     "SCSS",
@@ -29,10 +29,10 @@
   "funding": "https://www.buymeacoffee.com/dippas",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^10.4.13",
-    "browser-sync": "^2.27.10",
+    "autoprefixer": "^10.4.14",
+    "browser-sync": "^2.29.3",
     "del": "^7.0.0",
-    "graceful-fs": "^4.2.10",
+    "graceful-fs": "^4.2.11",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
@@ -47,8 +47,8 @@
     "gulp-sass": "^5.1.0",
     "gulp-terser": "^2.1.0",
     "path": "^0.12.7",
-    "postcss": "^8.4.20",
-    "sass": "^1.57.0"
+    "postcss": "^8.4.24",
+    "sass": "^1.63.3"
   },
   "dependencies": {
     "fever-cookies-plugin": "^2.2.0"

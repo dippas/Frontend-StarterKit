@@ -48,8 +48,8 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
 - Open the Project with your favorite IDE
 - Run the Shell
 - In the Shell run the following commands:
-  - `npm i -g npm gulp gulp-cli` (if is your first project using npm and gulp)
-  - `npm i`
+  - `pnpm i -g pnpm gulp gulp-cli` (if is your first project using npm and gulp)
+  - `pnpm i`
   - `gulp build` to compile files to `dist` folder
 
 ## Features
@@ -60,7 +60,7 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
 - Minified CSS & JS in dist folder
 - SourceMaps for better debugging
 - Core JS files includes (e.g.: URL external fix for security issue)
-- Code Formatted with  [Prettier](https://prettier.io/)
+- Code Formatted with [Prettier](https://prettier.io/)
 - Compiling HTML files from Pug
 - Writing Pug with JSON, to separate logic from content
 - Favicons Included
@@ -222,7 +222,6 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
                 home.pug
 
 ```
-
 ## Notes
 
 - Doesn't support Internet Explorer
