@@ -48,8 +48,8 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
 - Open the Project with your favorite IDE
 - Run the Shell
 - In the Shell run the following commands:
-  - `npm i -g npm gulp gulp-cli` (if is your first project using npm and gulp)
-  - `npm i`
+  - `pnpm i -g pnpm gulp gulp-cli` (if is your first project using npm and gulp)
+  - `pnpm i`
   - `gulp build` to compile files to `dist` folder
 
 ## Features
@@ -60,7 +60,7 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
 - Minified CSS & JS in dist folder
 - SourceMaps for better debugging
 - Core JS files includes (e.g.: URL external fix for security issue)
-- Code Formatted with  [Prettier](https://prettier.io/)
+- Code Formatted with [Prettier](https://prettier.io/)
 - Compiling HTML files from Pug
 - Writing Pug with JSON, to separate logic from content
 - Favicons Included
@@ -75,152 +75,37 @@ You can check the changelog [here](https://github.com/dippas/Frontend-StarterKit
 ## Project Structure
 
 ```html
-|   .prettierrc
-|   .gitignore
-|   gulpfile.js
-|   LICENSE
-|   package-lock.json
-|   package.json
-|   README.md
-|
-+---dist
-|   |   index.html
-|   |
-|   +---assets
-|   |   +---css
-|   |   |   |   styleguide.min.css
-|   |   |   |   styleguide.min.css.map
-|   |   |   |   styles.min.css
-|   |   |   |   styles.css.min.map
-|   |   |   |
-|   |   |   \---vendor
-|   |   |           vendor.min.css
-|   |   |           vendor.min.css.map
-|   |   |
-|   |   +---img
-|   |   |   \---favicon
-|   |   |        apple-touch-icon-57x57.png
-|   |   |        apple-touch-icon-72x72.png
-|   |   |        apple-touch-icon-114x114.png
-|   |   |        apple-touch-icon-120x120.png
-|   |   |        apple-touch-icon-144x144.png
-|   |   |        apple-touch-icon-152x152.png
-|   |   |        favicon-16x16.png
-|   |   |        favicon-32x32.png
-|   |   |        favicon.ico
-|   |   |        mstile-144x144.png
-|   |   |
-|   |   \---js
-|   |       +---app
-|   |       |       app.js
-|   |       |       app.js.map
-|   |       |
-|   |       \---vendor
-|   |               vendor.js
-|   |               vendor.js.map
-|   |
-|   \---views
-|       +---skeleton
-|       |   |   layout.html
-|       |   |
-|       |   +---footer
-|       |   |       footer.html
-|       |   |       scripts.html
-|       |   |
-|       |   \---header
-|       |           head.html
-|       |           header.html
-|       |
-|       +---styleguide
-|       |       footer.html
-|       |       header.html
-|       |       index.html
-|       |       layout.html
-|       |
-|       \---templates
-|               home.html
-|
-\---src
-    |   index.pug
-    |
-    +---data
-    |   |   styleguide.json
-    |   |
-    |   \---temp
-    |           data.json
-    |
-    +---img
-    |   \---favicon
-    |   |        apple-touch-icon-57x57.png
-    |   |        apple-touch-icon-72x72.png
-    |   |        apple-touch-icon-114x114.png
-    |   |        apple-touch-icon-120x120.png
-    |   |        apple-touch-icon-144x144.png
-    |   |        apple-touch-icon-152x152.png
-    |   |        favicon-16x16.png
-    |   |        favicon-32x32.png
-    |   |        favicon.ico
-    |   |        mstile-144x144.png
-    |
-    +---js
-    |   \---app
-    |       +---core
-    |       |       @cookies.js
-    |       |       @outlineAccessibility.js
-    |       |       @preloader.js
-    |       |       @scrollToElement.js
-    |       |       @urlExternalSafe.js
-    |       |
-    |       \---general
-    +---scss
-    |   |   global.scss
-    |   |   styleguide.scss
-    |   |
-    |   +---abstracts
-    |   |       _functions.scss
-    |   |       _mixins.scss
-    |   |       _placeholders-includes.scss
-    |   |       _placeholders.scss
-    |   |       _variables.scss
-    |   |
-    |   +---base
-    |   |       _reset.scss
-    |   |       _typography.scss
-    |   |
-    |   +---layout
-    |   |       _buttons.scss
-    |   |       _fonts.scss
-    |   |       _footer.scss
-    |   |       _general.scss
-    |   |       _header.scss
-    |   |       _utils.scss
-    |   |
-    |   \---styleguide
-    |           _styleguide.scss
-    |
-    \---views
-        +---modules
-        +---skeleton
-        |   |   layout.pug
-        |   |
-        |   +---footer
-        |   |       footer.pug
-        |   |       scripts.pug
-        |   |
-        |   \---header
-        |           head.pug
-        |           header.pug
-        |
-        +---styleguide
-        |   |   footer.pug
-        |   |   header.pug
-        |   |   index.pug
-        |   |   layout.pug
-        |   |
-        |   \---modules
-        \---templates
-                home.pug
-
+| .prettierrc | .gitignore | gulpfile.js | LICENSE | package-lock.json |
+package.json | README.md | +---dist | | index.html | | | +---assets | | +---css
+| | | | styleguide.min.css | | | | styleguide.min.css.map | | | | styles.min.css
+| | | | styles.css.min.map | | | | | | | \---vendor | | | vendor.min.css | | |
+vendor.min.css.map | | | | | +---img | | | \---favicon | | |
+apple-touch-icon-57x57.png | | | apple-touch-icon-72x72.png | | |
+apple-touch-icon-114x114.png | | | apple-touch-icon-120x120.png | | |
+apple-touch-icon-144x144.png | | | apple-touch-icon-152x152.png | | |
+favicon-16x16.png | | | favicon-32x32.png | | | favicon.ico | | |
+mstile-144x144.png | | | | | \---js | | +---app | | | app.js | | | app.js.map |
+| | | | \---vendor | | vendor.js | | vendor.js.map | | | \---views |
++---skeleton | | | layout.html | | | | | +---footer | | | footer.html | | |
+scripts.html | | | | | \---header | | head.html | | header.html | | |
++---styleguide | | footer.html | | header.html | | index.html | | layout.html |
+| | \---templates | home.html | \---src | index.pug | +---data | |
+styleguide.json | | | \---temp | data.json | +---img | \---favicon | |
+apple-touch-icon-57x57.png | | apple-touch-icon-72x72.png | |
+apple-touch-icon-114x114.png | | apple-touch-icon-120x120.png | |
+apple-touch-icon-144x144.png | | apple-touch-icon-152x152.png | |
+favicon-16x16.png | | favicon-32x32.png | | favicon.ico | | mstile-144x144.png |
++---js | \---app | +---core | | @cookies.js | | @outlineAccessibility.js | |
+@preloader.js | | @scrollToElement.js | | @urlExternalSafe.js | | | \---general
++---scss | | global.scss | | styleguide.scss | | | +---abstracts | |
+_functions.scss | | _mixins.scss | | _placeholders-includes.scss | |
+_placeholders.scss | | _variables.scss | | | +---base | | _reset.scss | |
+_typography.scss | | | +---layout | | _buttons.scss | | _fonts.scss | |
+_footer.scss | | _general.scss | | _header.scss | | _utils.scss | | |
+\---styleguide | _styleguide.scss | \---views +---modules +---skeleton | |
+layout.pug | | | +---footer | | footer.pug | | scripts.pug | | | \---header |
+head.pug | header.pug | +---styleguide | | footer.pug | | header.pug | |
+index.pug | | layout.pug | | | \---modules \---templates home.pug
 ```
 
 ## Notes
