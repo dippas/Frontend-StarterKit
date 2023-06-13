@@ -30,7 +30,7 @@ This starterkit allows you to have a quickly start in building your website.
 
 [![release (latest by date)](https://img.shields.io/github/v/release/dippas/Frontend-StarterKit)](https://github.com/dippas/Frontend-StarterKit/releases/latest)
 [![issues](https://img.shields.io/github/issues/dippas/Frontend-StarterKit)](https://github.com/dippas/Frontend-StarterKit/issues)
-![maintenance](https://img.shields.io/maintenance/yes/2022)
+![maintenance](https://img.shields.io/maintenance/yes/2023)
 ![release date](https://img.shields.io/github/release-date/dippas/Frontend-StarterKit)
 
 ## ChangeLog
