@@ -1,4 +1,4 @@
-# Frontend StarterKit - [Gulp 4, Pug, SCSS, ES6+]
+# Frontend StarterKit (Legacy) - [Gulp 4, Pug, SCSS, ES6+]
 
 This starterkit allows you to have a quickly start in building your website.
 
