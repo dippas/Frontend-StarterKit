@@ -1,4 +1,9 @@
-# Frontend StarterKit (Legacy) - [Gulp 4, Pug, SCSS, ES6+]
+# Frontend StarterKit - [Gulp 4, Pug, SCSS, ES6+]
+
+> [!IMPORTANT]
+This project was created before the dawm of JavaScript frameworks, considering it now legacy or for learning purposes
+
+---
 
 This starterkit allows you to have a quickly start in building your website.
 
